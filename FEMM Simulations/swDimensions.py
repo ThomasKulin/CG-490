@@ -9,20 +9,24 @@ import os
 # TEST PARAMS --- Units in cm
 filename = "7mmCoil_192T_156A_swDimensions"
 dataFileName = "40uH_Dimensions"
+# coil params
 inductance = 40  # coil inductance [uH]
-wireDia = 1.06  # coil wire diameter [mm]
+wireDiameter = 1.06  # coil wire diameter [mm]
+wireResistivity = 20.9 / 1000  # coil wire resistance per length [ohm/m]
+# circuit params
+circuitResistance = 0.15  # [ohm]
 # projectile position (front) [cm]
 pos_start = -2
 pos_stop = 8
 pos_step = 1
 # projectile length [cm]
-len_start = 3
-len_stop = 5
+len_start = 3.2
+len_stop = 3.2
 len_step = 1
 # projectile radius [cm] (also changes the inner radius of the coil)
 rad_start = 0.32
-rad_stop = 0.5
-rad_step = 0.1
+rad_stop = 1.28
+rad_step = 0.16
 
 def main():
     coil = Coil([[0.32, 3], [3.32, 3], [3.32, 2], [0.32, 2]])
@@ -54,14 +58,18 @@ def main():
         for r in range(len(rad_iter)):
             # set projectile and coil geometry
             projectile.setDimensions(rad_iter[r], len_iter[l])
-            outerRad, exactLayers, numLayers, numTurns, L = coil.calculateDimensions(projectile.getRadius(), projectile.getLength(), inductance, wireDia / 10)
+            outerRad, exactLayers, numLayers, wireLength, wireResistance, numTurns, L = coil.calculateProperties(projectile.getRadius(), projectile.getLength(), inductance, wireDiameter / 10, wireResistivity)
             coil.setDimensions(projectile.getRadius(), outerRad, projectile.getLength())
             # set coil turns and approximate current
-            femm.mi_setcurrent('Coil', 156)
+            coilCurrent = 50 / (wireResistance + circuitResistance)
+            femm.mi_setcurrent('Coil', coilCurrent)
             femm.mi_selectgroup(15)
-            femm.mi_setblockprop('18 AWG', 1, 0, 'Coil', 0, 13, 100)
+            femm.mi_setblockprop('18 AWG', 1, 0, 'Coil', 0, 15, numTurns)
+            femm.mi_movetranslate(0, 0)  # solves a bug where group 15 deosnt deselect until a movetranslate
 
             worksheet.write(0, (l*len(rad_iter)+r) + 1, 'len = ' + str(round(projectile.getLength() * 10)) + ' mm rad = ' + str(round(projectile.getRadius() * 10)) + ' mm Force [N]')
+
+            print("Radius Iteration:", r, "\tLayers:", numLayers, "\t Turns:", numTurns, '\tCoil Length:', round(projectile.getLength(), 6), '[cm]', '\tIR:', round(projectile.getRadius(), 6), '[cm]', '\tOR:', round(outerRad, 6), '[cm]', '\tWire Length:', wireLength, '[m]', '\tWire Resistance:', wireResistance, '[ohm]', )
 
             for p in range(len(pos_iter)):
                 femm.mi_analyze()
@@ -77,7 +85,6 @@ def main():
                 worksheet.write(p + 1, (l*len(rad_iter)+r) + 1, f[l][r][p])
 
                 projectile.moveZ(pos_step)  # move projectile forward by pos_step cm
-                print()
 
             projectile.moveZ(-len(pos_iter)*pos_step)  # move projectile back to start
 
@@ -101,44 +108,54 @@ class Coil:
         return self.nodes[1][1]
 
     def setDimensions(self, rInner, rOuter, len):
-        femm.mi_selectgroup(10)
-        femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
-        self.nodes[0][0] = rInner
-        self.nodes[0][1] = len + self.nodes[3][1]
         femm.mi_selectgroup(11)
         femm.mi_movetranslate(rOuter - self.nodes[1][0], len - (self.nodes[1][1] - self.nodes[2][1]))
         self.nodes[1][0] = rOuter
         self.nodes[1][1] = len + self.nodes[2][1]
-        femm.mi_selectgroup(15)  # block label
-        femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
-        femm.mi_selectgroup(13)
-        femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
-        self.nodes[3][0] = rInner
         femm.mi_selectgroup(12)
         femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
         self.nodes[2][0] = rOuter
+        femm.mi_selectgroup(15)  # block label
+        femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+        femm.mi_selectgroup(10)
+        femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
+        self.nodes[0][0] = rInner
+        self.nodes[0][1] = len + self.nodes[3][1]
+        femm.mi_selectgroup(13)
+        femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+        self.nodes[3][0] = rInner
 
-    def calculateDimensions(self, r1, length, inductance, wireDia):
+
+    def calculateProperties(self, r1, length, inductance, wireDia, wireRes):
         # Wheeler's approx for multilayer inductors is L [uH] = 31.6 * N^2 * r1^2 / (6*r1 + 9*x + 10*(r2-r1))
         # N is number of turns, r1 is inner radius [m], r2 is outer radius [m], x is length [m]
         # rearranging this we can calculate the dimensions of a coil for a specific inductance
 
         # convert units to inches
-        r1 /= 2.54
-        length /= 2.54
-        wireDia /= 2.54
+        r1_inches = r1/2.54
+        length_inches = length/2.54
+        wireDia_inches = wireDia/2.54
 
-        turnsPerLayer = length / wireDia  # convert length to mm before dividing by mm
-        for numLayers in range(10):
-            r2 = wireDia * numLayers + r1
-            a = (r1 + r2) / 2
-            b = length
-            c = r2 - r1
+        turnsPerLayer = int(length_inches / wireDia_inches)  # convert length to mm before dividing by mm
+        for numLayers in range(100):
+            r2_inches = wireDia_inches * numLayers + r1_inches
+            a = (r1_inches + r2_inches) / 2
+            b = length_inches
+            c = r2_inches - r1_inches
             N = np.sqrt(inductance * (6 * a + 9 * b + 10 * c) / (0.8 * a * a))
-            if int(math.ceil(N / turnsPerLayer)) == numLayers:
-                L = 0.8 * N * N * a * a / (6 * a + 9 * b + 10 * c)
-                return r2 * 2.54, N / turnsPerLayer, numLayers, N, L
-                break
+            if int(math.ceil(N / turnsPerLayer)) <= numLayers:
+                L = 0.8 * N * N * a * a / (6 * a + 9 * b + 10 * c)  # calculate final coil inductance
+                wireLength = 0
+                remainingTurns = N
+                for n in range(numLayers):
+                    if remainingTurns >= turnsPerLayer:
+                        wireLength += 2 * np.pi * (r1/100 + wireDia/200 + n*wireDia/100) *turnsPerLayer
+                        remainingTurns -= turnsPerLayer
+                    else:
+                        wireLength += 2 * np.pi * (r1 / 100 + wireDia / 2000) * remainingTurns
+                        remainingTurns -= remainingTurns
+                wireResistance = wireRes * wireLength
+                return r2_inches * 2.54, N / turnsPerLayer, numLayers, wireLength, wireResistance, N, L
         return -1
 
 
@@ -213,6 +230,6 @@ class Projectile:
 
 if __name__ == "__main__":
     main()
-    # print(calculateCoil(0.0045, 0.032, 40, 0.00106))
+    # print(calculateProperties(0.0045, 0.032, 40, 0.00106))
 
 
