@@ -8,25 +8,25 @@ import os
 
 # TEST PARAMS --- Units in cm
 filename = "7mmCoil_192T_156A_swDimensions"
-dataFileName = "40uH_Dimensions"
+dataFileName = "32mm_rad_vs_ind"
 # coil params
-inductance = 40  # coil inductance [uH]
+ind_start = 40  # coil inductance [uH]
+ind_stop = 80
+ind_step = 20
 wireDiameter = 1.06  # coil wire diameter [mm]
 wireResistivity = 20.9 / 1000  # coil wire resistance per length [ohm/m]
 # circuit params
 circuitResistance = 0.15  # [ohm]
+
 # projectile position (front) [cm]
 pos_start = -2
 pos_stop = 8
 pos_step = 1
-# projectile length [cm]
-len_start = 3.2
-len_stop = 7
-len_step = 1
 # projectile radius [cm] (also changes the inner radius of the coil)
-rad_start = 0.45
-rad_stop = 0.45
+rad_start = 0.32
+rad_stop = 1.28
 rad_step = 0.16
+length = 3.2  # projectile length [cm]
 
 def main():
     coil = Coil([[0.32, 3], [3.32, 3], [3.32, 2], [0.32, 2]])
@@ -39,7 +39,7 @@ def main():
 
     # set up data capture
     DateTime = datetime.datetime.now().strftime("%Y_%m_%d %H_%M").replace('.', '-')
-    dataDir = 'Data\\DimensionSweep ' + DateTime
+    dataDir = 'Data\\InductanceSweep ' + DateTime
     os.makedirs(dataDir)
     workbook = xl.Workbook(dataDir + '\\' + dataFileName + ".xlsx")
     worksheet = workbook.add_worksheet()
@@ -47,18 +47,18 @@ def main():
 
     # Calculate required iterations
     pos_iter = np.arange(pos_start, pos_stop+0.001, pos_step)
-    len_iter = np.arange(len_start, len_stop+0.001, len_step)
+    ind_iter = np.arange(ind_start, ind_stop + 0.001, ind_step)
     rad_iter = np.arange(rad_start, rad_stop+0.001, rad_step)
 
-    z = [[[0 for p in range(len(pos_iter))] for r in range(len(rad_iter))] for l in range(len(len_iter))]
-    f = [[[0 for p in range(len(pos_iter))] for r in range(len(rad_iter))] for l in range(len(len_iter))]
-    for l in range(len(len_iter)):
-        print("Length Iteration: " + str(l))
+    z = [[[0 for p in range(len(pos_iter))] for r in range(len(rad_iter))] for l in range(len(ind_iter))]
+    f = [[[0 for p in range(len(pos_iter))] for r in range(len(rad_iter))] for l in range(len(ind_iter))]
+    for l in range(len(ind_iter)):
+        print("Inductance Iteration: " + str(l))
 
         for r in range(len(rad_iter)):
             # set projectile and coil geometry
-            projectile.setDimensions(rad_iter[r], len_iter[l])
-            outerRad, exactLayers, numLayers, wireLength, wireResistance, numTurns, L = coil.calculateProperties(projectile.getRadius(), projectile.getLength(), inductance, wireDiameter / 10, wireResistivity)
+            projectile.setDimensions(rad_iter[r], length)
+            outerRad, exactLayers, numLayers, wireLength, wireResistance, numTurns, L = coil.calculateProperties(projectile.getRadius(), projectile.getLength(), ind_iter[l], wireDiameter / 10, wireResistivity)
             coil.setDimensions(projectile.getRadius(), outerRad, projectile.getLength())
             # set coil turns and approximate current
             coilCurrent = 50 / (wireResistance + circuitResistance)
@@ -67,9 +67,9 @@ def main():
             femm.mi_setblockprop('18 AWG', 1, 0, 'Coil', 0, 15, numTurns)
             femm.mi_movetranslate(0, 0)  # solves a bug where group 15 doesn't deselect until a movetranslate
 
-            worksheet.write(0, (l*len(rad_iter)+r) + 1, 'len = ' + str(round(projectile.getLength() * 10)) + ' mm rad = ' + str(round(projectile.getRadius() * 10)) + ' mm Force [N]')
+            worksheet.write(0, (l*len(rad_iter)+r) + 1, 'ind = ' + str(round(ind_iter[l], 6)) + ' uH rad = ' + str(round(projectile.getRadius() * 10, 6)) + ' mm Force [N]')
 
-            print("Radius Iteration:", r, "\tLayers:", numLayers, "\t Turns:", numTurns, '\tCoil Length:', round(projectile.getLength(), 6), '[cm]', '\tIR:', round(projectile.getRadius(), 6), '[cm]', '\tOR:', round(outerRad, 6), '[cm]', '\tWire Length:', wireLength, '[m]', '\tWire Resistance:', wireResistance, '[ohm]', )
+            print("Radius Iteration:", r, "\tLayers:", numLayers, "\t Turns:", numTurns, '\tCoil Inductance:', round(ind_iter[l], 6), '[uH]', '\tCurrent:', round(coilCurrent, 6), '[A]\tIR:', round(projectile.getRadius(), 6), '[cm]', '\tOR:', round(outerRad, 6), '[cm]', '\tWire Length:', wireLength, '[m]', '\tWire Resistance:', wireResistance, '[ohm]', )
 
             for p in range(len(pos_iter)):
                 femm.mi_analyze()
@@ -108,23 +108,40 @@ class Coil:
         return self.nodes[1][1]
 
     def setDimensions(self, rInner, rOuter, len):
-        femm.mi_selectgroup(11)
-        femm.mi_movetranslate(rOuter - self.nodes[1][0], len - (self.nodes[1][1] - self.nodes[2][1]))
-        self.nodes[1][0] = rOuter
-        self.nodes[1][1] = len + self.nodes[2][1]
-        femm.mi_selectgroup(12)
-        femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
-        self.nodes[2][0] = rOuter
-        femm.mi_selectgroup(15)  # block label
-        femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
-        femm.mi_selectgroup(10)
-        femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
-        self.nodes[0][0] = rInner
-        self.nodes[0][1] = len + self.nodes[3][1]
-        femm.mi_selectgroup(13)
-        femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
-        self.nodes[3][0] = rInner
-
+        if self.nodes[3][0] <= rInner:
+            femm.mi_selectgroup(11)
+            femm.mi_movetranslate(rOuter - self.nodes[1][0], len - (self.nodes[1][1] - self.nodes[2][1]))
+            self.nodes[1][0] = rOuter
+            self.nodes[1][1] = len + self.nodes[2][1]
+            femm.mi_selectgroup(12)
+            femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
+            self.nodes[2][0] = rOuter
+            femm.mi_selectgroup(15)  # block label
+            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+            femm.mi_selectgroup(10)
+            femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
+            self.nodes[0][0] = rInner
+            self.nodes[0][1] = len + self.nodes[3][1]
+            femm.mi_selectgroup(13)
+            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+            self.nodes[3][0] = rInner
+        else:
+            femm.mi_selectgroup(10)
+            femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
+            self.nodes[0][0] = rInner
+            self.nodes[0][1] = len + self.nodes[3][1]
+            femm.mi_selectgroup(13)
+            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+            femm.mi_selectgroup(15)  # block label
+            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+            self.nodes[3][0] = rInner
+            femm.mi_selectgroup(11)
+            femm.mi_movetranslate(rOuter - self.nodes[1][0], len - (self.nodes[1][1] - self.nodes[2][1]))
+            self.nodes[1][0] = rOuter
+            self.nodes[1][1] = len + self.nodes[2][1]
+            femm.mi_selectgroup(12)
+            femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
+            self.nodes[2][0] = rOuter
 
     def calculateProperties(self, r1, length, inductance, wireDia, wireRes):
         # Wheeler's approx for multilayer inductors is L [uH] = 31.6 * N^2 * r1^2 / (6*r1 + 9*x + 10*(r2-r1))
@@ -231,5 +248,3 @@ class Projectile:
 if __name__ == "__main__":
     main()
     # print(calculateProperties(0.0045, 0.032, 40, 0.00106))
-
-
