@@ -8,9 +8,9 @@ import os
 
 # TEST PARAMS --- Units in cm
 filename = "7mmCoil_192T_156A_swDimensions"
-dataFileName = "40uH_Dimensions"
+dataFileName = "60uH_Dimensions"
 # coil params
-inductance = 40  # coil inductance [uH]
+inductance = 60  # coil inductance [uH]
 wireDiameter = 1.06  # coil wire diameter [mm]
 wireResistivity = 20.9 / 1000  # coil wire resistance per length [ohm/m]
 # circuit params
@@ -20,7 +20,7 @@ pos_start = -2
 pos_stop = 8
 pos_step = 1
 # projectile length [cm]
-len_start = 3.2
+len_start = 3
 len_stop = 7
 len_step = 1
 # projectile radius [cm] (also changes the inner radius of the coil)
@@ -69,7 +69,7 @@ def main():
 
             worksheet.write(0, (l*len(rad_iter)+r) + 1, 'len = ' + str(round(projectile.getLength() * 10)) + ' mm rad = ' + str(round(projectile.getRadius() * 10)) + ' mm Force [N]')
 
-            print("Radius Iteration:", r, "\tLayers:", numLayers, "\t Turns:", numTurns, '\tCoil Length:', round(projectile.getLength(), 6), '[cm]', '\tIR:', round(projectile.getRadius(), 6), '[cm]', '\tOR:', round(outerRad, 6), '[cm]', '\tWire Length:', wireLength, '[m]', '\tWire Resistance:', wireResistance, '[ohm]', )
+            print("Radius Iteration:", r, "\tLayers:", numLayers, "\t Turns:", numTurns, '\tCoil Length:', round(projectile.getLength(), 6), '[cm]', '\tCurrent:', round(coilCurrent, 6), '[A]\tIR:', round(projectile.getRadius(), 6), '[cm]', '\tOR:', round(outerRad, 6), '[cm]', '\tWire Length:', wireLength, '[m]', '\tWire Resistance:', wireResistance, '[ohm]', )
 
             for p in range(len(pos_iter)):
                 femm.mi_analyze()

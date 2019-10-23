@@ -10,9 +10,9 @@ import os
 filename = "7mmCoil_192T_156A_swDimensions"
 dataFileName = "32mm_rad_vs_ind"
 # coil params
-ind_start = 40  # coil inductance [uH]
-ind_stop = 80
-ind_step = 20
+ind_start = 10  # coil inductance [uH]
+ind_stop = 100
+ind_step = 10
 wireDiameter = 1.06  # coil wire diameter [mm]
 wireResistivity = 20.9 / 1000  # coil wire resistance per length [ohm/m]
 # circuit params
@@ -23,8 +23,8 @@ pos_start = -2
 pos_stop = 8
 pos_step = 1
 # projectile radius [cm] (also changes the inner radius of the coil)
-rad_start = 0.32
-rad_stop = 1.28
+rad_start = 0.45
+rad_stop = 0.45
 rad_step = 0.16
 length = 3.2  # projectile length [cm]
 
