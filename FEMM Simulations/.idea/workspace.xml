@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f6208e2-d4b1-4aa9-8bc6-de37d325c817" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/FEMM Simulations.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FEMM Simulations.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/ProjectileLength 2019_10_08 15_01/7mmCoil_192T_156A_swProjectileLength.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/ProjectileLength 2019_10_08 15_01/7mmCoil_192T_156A_swProjectileLength.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swDimensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/swDimensions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/swInductance.py" beforeDir="false" afterPath="$PROJECT_DIR$/swInductance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.ans" beforeDir="false" afterPath="$PROJECT_DIR$/temp.ans" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.fem" beforeDir="false" afterPath="$PROJECT_DIR$/temp.fem" afterDir="false" />
+    <list default="true" id="2f6208e2-d4b1-4aa9-8bc6-de37d325c817" name="Default Changelist" comment="Started writing the simulation writeup report">
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.op.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.asc" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.asc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.op.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/LTSpice D_AntiParallel.PNG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/LTSpice D_zener60v.PNG" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -99,7 +100,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-1746" />
     <option name="y" value="-9" />
     <option name="width" value="1536" />
@@ -283,10 +284,18 @@
       <updated>1570567175400</updated>
       <workItem from="1571784495599" duration="8081000" />
     </task>
+    <task id="LOCAL-00001" summary="Started writing the simulation writeup report">
+      <created>1571866003156</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571866003156</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15753424" />
@@ -361,6 +370,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Started writing the simulation writeup report" />
+    <option name="LAST_COMMIT_MESSAGE" value="Started writing the simulation writeup report" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/FEMM_Simulations$swDimensions.coverage" NAME="swDimensions Coverage Results" MODIFIED="1571789692178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
