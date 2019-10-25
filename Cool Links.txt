@@ -1,1 +1,14 @@
-https://www.eevblog.com/forum/projects/my-electromagnetic-bb-gun-project-130-ms-velocity-20-rpm-rate-of-fire/
+Insprational Projects
+
+full auto bb gun. good aesthetic: https://www.eevblog.com/forum/projects/my-electromagnetic-bb-gun-project-130-ms-velocity-20-rpm-rate-of-fire/
+Battery powered, tons of helpful info: https://4hv.org/e107_plugins/forum/forum_viewtopic.php?p=1&id=147269
+
+Concepts
+
+diode suppression: https://4hv.org/e107_plugins/forum/forum_viewtopic.php?p=1&id=147858
+
+Components
+
+Digital logic optical sensor: https://www.digikey.com/product-detail/en/OPB819Z/365-1262-ND/1015177
+Mosfet alternative (cheaper): https://www.digikey.ca/product-detail/en/STP310N10F7/497-13233-5-ND/3598099
+TVS diode: https://www.digikey.ca/product-detail/en/littelfuse-inc/SMDJ28A/SMDJ28ACT-ND/1835367

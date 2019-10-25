@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f6208e2-d4b1-4aa9-8bc6-de37d325c817" name="Default Changelist" comment="Started writing the simulation writeup report">
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.op.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/60V Zener Diode Config.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.asc" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.asc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.op.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/AntiParallel Diode Config.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/LTSpice D_AntiParallel.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/LTSpice D_zener60v.PNG" beforeDir="false" />
-    </list>
+    <list default="true" id="2f6208e2-d4b1-4aa9-8bc6-de37d325c817" name="Default Changelist" comment="Started writing the simulation writeup report" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,10 +91,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-1746" />
+    <option name="x" value="-1464" />
     <option name="y" value="-9" />
-    <option name="width" value="1536" />
-    <option name="height" value="824" />
+    <option name="width" value="1229" />
+    <option name="height" value="659" />
   </component>
   <component name="ProjectId" id="1SZwb55gyjyPvnC54Kl6BQuQZsY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
