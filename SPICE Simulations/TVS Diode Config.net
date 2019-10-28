@@ -1,0 +1,13 @@
+* C:\Users\Thomas Kulin\Documents\Projects\CG-490\SPICE Simulations\TVS Diode Config.asc
+XM1 Vo Vi 0 IPB180N10S4_02_L0
+V1 N002 0 PULSE(0 20 0.001 1e-7 1e-7 0.005 0 1) Rser=0.1`
+V2 N001 0 50 Rser=.12
+L1 N001 Vo 40e-6 Rser=.08 Cpar=1e-9
+R1 Vi N002 4
+XD1 N003 Vo SMDJ24A
+XD2 0 N003 SMDJ24A
+.lib mylib\NMOS\OptiMOS-T2_100V.lib
+.tran 0 0.01 0 0.00001
+.lib mylib\TVS\SMDJXXXA.lib
+.backanno
+.end
