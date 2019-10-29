@@ -1,0 +1,184 @@
+*****************************************************************
+******STMicroelectronics MOSFET, IGBT and Bipolar Library *******
+*****************************************************************
+*								            				    *
+* Models provided by STMicroelectronics are not guaranteed to   *
+* fully represent all the specifications and operating	        *
+* characteristics of the product behavior that they reproduce.  *
+* The model describes the characteristics of a typical device.  *
+* In all cases, the current product data sheet contains all     *
+* information to be used like final design guidelines and the   *
+* only actual performance specification.                        *
+* Altough models can be a useful tool in evaluating device      *
+* performance, they cannot model exact device performance under *
+* all conditions.						                        *
+* STMicroelectronics therefore does not assume any              *
+* responsibility arising from their use.                        *
+* STMicroelectronics reserves the right to change models        *
+* without prior notice.                                         *
+*                                                               *
+* Note: The model doesn't take into account the drain, gate,    *
+* source inductances.If these contributions have to be          *
+* considered it is possible include the inductors externally.   *
+* For this package the values can be estimated as follow        *
+*                                                               *
+* Ldrain= 1nH ,Lsource=2nH and Lgate=2.5nH                      *
+*****************************************************************
+********************* D G S *************************************
+
+.SUBCKT STP310N10F7_V3 drain gate source Tj Tcase
+*****************************************************************
+*E1	Tj	Val_T	VALUE={TEMP}
+*R1	Val_T	0	1E-03
+*****************************************************************
+Rtk	 Tj 0 1E010
+Rtk1 Tj 0 1E010
+*****************************************************************
+VLd drain d1k 0
+V_Read d1k d1 0
+VLs source ss 0
+VLg gate g2 0
+Rg1 g2 g {Rg}
+.PARAM  Rg=2
+*****************************************************************
+.PARAM AreaCap={1} Area={1} Gfs={1}
+*****************************************************************
+.PARAM  Vth0=5.15 KpSat0=155 KpLin0=275    
+.PARAM  Rs=1E-04 Drs=-1.5 
+.PARAM  Vthx=3.5E-03 KSat=-0.8 KLin=-0.5    
+.PARAM  Lambda=0.035 Rdrain={1.37E-03/Area}  
+.PARAM  A=1 B=1 Rx=0.7 Rpa=1E-06 Unt=-2.35
+*****************************************************************
+.FUNC Vth1(x) {Vth0-Vthx*(x-27)}
+.FUNC kpsat(x) {KpSat0*((x+273)/300)**(KSat)}
+.FUNC kplin(x) {KpLin0*((x+273)/300)**(KLin)}
+*****************************************************************
+V2xx  d1 22xxx 0
+E2xxx 22xxx d VALUE={R2(I(V2xx),V(TJ))}
+.FUNC R2(I1,T2) {I1*(Rdrain+Rpa*((I1**A))**Rx)/((B*((T2+273)/300)**(Unt))*Area)}
+*****************************************************************
+R_Grs ss s 1E03
+V1xx 11xxx ss 0
+E1xxx 11xxx s VALUE={R1(Limit(I(V1xx),-1MEG,1MEG),V(TJ))}
+.FUNC R1(I1,T1) {-(I1)*((Rs/(Area*(((T1+273)/300)**(Drs)))))}
+*****************************************************************
+Gmos d s VALUE {0.9*Gfs*(IF(V(d,s)>0,(IF(V(g,s)<Vth1(V(TJ)),0,
++(IF((V(d,s)<(V(g,s)-Vth1(V(TJ)))*kpsat(V(TJ))/kplin(V(TJ))),(1+Lambda*V(d,s))*kplin(V(TJ))/2*V(d,s)*
++(2*(V(g,s)-Vth1(V(TJ)))-kplin(V(TJ))/kpsat(V(TJ))*V(d,s)),
++(1+Lambda*V(d,s))*kpsat(V(TJ))/2*(V(g,s)-Vth1(V(TJ)))**2)))),-(IF(V(g,s)<Vth1(V(TJ)),0,
++(IF((V(s,d)<(V(g,s)-Vth1(V(TJ)))*kpsat(V(TJ))/kplin(V(TJ))),(1+Lambda*V(s,d))*kplin(V(TJ))/2*V(s,d)*
++(2*(V(g,s)-Vth1(V(TJ)))-kplin(V(TJ))/kpsat(V(TJ))*V(s,d)),
++(1+Lambda*V(s,d))*kpsat(V(TJ))/2*(V(g,s)-Vth1(V(TJ)))**2))))))} 
+*****************************************************************
+CGS source g {12800E-12*AreaCap}
+RCGS source g 1000E06 
+*****************************************************************
+EDeV DeV1 0 VALUE {V(d,g)}
+C_DeV1 DeV1 DeV2 1E-12
+R_DeV DeV2 DeV3 1E-06
+V_Miller DeV3 0 0 
+G_Miller d g VALUE ={AreaCap*1*V(alfa)*i(V_Miller)*1E12}
+*****************************************************************
+RCap Alfa 0 1E03
+ECap Alfa 0 TABLE ={V(d,g)}
++(0.1,2873.24p) 
++(0.2,2702.25p) 
++(0.5,2331.2p) 
++(1,1923.45p) 
++(2,1501.14p) 
++(3,1258.45p) 
++(5,973.68p) 
++(7,791.71p) 
++(10,604.76p) 
++(15,404.53p) 
++(25,204.79p) 
++(35,119.05p) 
++(50,57.04p) 
++(60,46.54p) 
++(70,40.6p) 
++(80,36.38p) 
++(90,33.21p) 
++(100,31.63p) 
+*****************************************************************
+EDeVc DeV1c 0 VALUE {V(d,s)}
+C_DeV1c DeV1c DeV2c 1E-12
+R_DeVc DeV2c DeV3c 1E-06
+V_Millerc DeV3c 0 0 
+G_Coss d s VALUE ={1*AreaCap*V(Alfa2)*i(V_Millerc)*1E12}
+*****************************************************************
+RCap2 Alfa2 0 1E03
+ECap2 Alfa2 0 TABLE ={V(d,s)}
++(0.1,10002.2p) 
++(0.2,9644.89p) 
++(0.5,8803.31p) 
++(1,7925.65p) 
++(2,6993.31p) 
++(3,6441.86p) 
++(5,5773.6p) 
++(7,5325.62p) 
++(10,4839.52p) 
++(15,4258.48p) 
++(25,3492.75p) 
++(35,2959.52p) 
++(50,2196.27p) 
++(60,1703.36p) 
++(70,1443.22p) 
++(80,1308.39p) 
++(90,1216.66p) 
++(100,1154.92p) 
+*****************************************************************
+V_Sense2  sx s  0
+*****************************************************************
+.PARAM RAV=0.0023 BVDSS=1
+G_BVdss d1bVdss1 ss VALUE={I_BVdss(V(d1bVdss1,ss),V(Tj))}
+R_GBdss d1bVdss1 0 1E12
+.FUNC I_BVdss(z,k1) {(exp(min(-175+z/(bvd(k1)),7))-0E-12)}
+.FUNC bvd(k) {0.695*BVDSS+0.000235*k}
+R_BVdss d1 d1bVdss1 {RAV}
+*****************************************************************
+V_Diodo d1zd d1z 0
+G_Diode source d1zd VALUE={I_Diode(V(source,d1zd),V(Tj))}
+R_X source d1zd 1E12
+.FUNC I_Diode(z3,k3) {(exp(min(-15+z3/(did(k3)),7))-0E-12)}
+.FUNC did(k4) {0.044-105E-06*k4}
+G_rdiodo d1 d1z VALUE={v(d1,d1z)/(1m*(1+((200m*V(Tj))/25)))}
+R_G_R_didd d1 d1z 1k
+*****************************************************************
+E_E001 ba 0 VALUE {-I(V_Diodo)}
+R_R002 aa ba 1E03
+C aa 0 35E-12
+.PARAM Irrm=2.5E04
+*****************************************************************
+R_edep drain d_dedep 30
+E_Eds d_dedep edep VALUE {-V(aa,0)*Irrm*AreaCap}
+Edeva dev1a 0 value {v(edep,source)}
+C_dev1a dev1a dev2a 1E-12
+R_deva dev2a dev3a 1E-06
+V_millera dev3a 0 0 
+G_millera edep source  value ={v(alfaa)*i(V_millera)*1E12}
+*****************************************************************
+Rcapa alfaa 0 1E03
+Ecapa alfaa 0 TABLE ={V(Tj)}
++(25,1p)
++(150,1.42p)  
+*****************************************************************
+RDUMMY TJ TCASE 1E9
+G_Power 0 TJ VALUE ={I(V_Read)*V(drain,source)}
+
+.PARAM Kth=1.06
+
+Rth1 Tj Th1		{0.701E-02*Kth}
+Rth2 Th1 Th2	{0.252E-01*Kth}
+Rth3 Th2 Th3	{0.911E-01*Kth}
+Rth4 Th3 Th4	{0.223*Kth}
+Rth5 Th4 Tcase	{0.105*Kth}
+
+Cth1 Tj 0		{0.256E-03/Kth}
+Cth2 Th1 0		{0.171E-02/Kth}
+Cth3 Th2 0		{0.701E-02/Kth}
+Cth4 Th3 0		{0.141E-01/Kth}
+Cth5 Th4 0		{0.251/Kth}
+Cth6 Tcase 0	0.251
+*****************************************************************
+.ENDS STP310N10F7_V3
+

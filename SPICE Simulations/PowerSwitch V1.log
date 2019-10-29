@@ -1,23 +1,27 @@
-Circuit: * C:\Users\Thomas Kulin\Documents\Projects\CG-490\SPICE Simulations\PowerSwitch V1.asc
+Circuit: * C:\Users\ekultho\Documents\Personal\CG 490\SPICE Simulations\PowerSwitch V1.asc
 
-WARNING: Specified period is not longer than the sum of Trise, Tfall, and Ton for v1.  Increasing period to 1.25357e-313
+WARNING: Specified period is not longer than the sum of Trise, Tfall, and Ton for v1.  Increasing period to 2.45654e-312
+WARNING: Node M2:1:OX2 is floating.
+ERROR: Node M2:TB is floating and connected to current source G:M2:_TH
+
+WARNING: Less than two connections to node M1:SX.  This node is used by V:M1:_SENSE2.
 Direct Newton iteration for .op point succeeded.
 
-Date: Mon Oct 28 21:21:29 2019
-Total elapsed time: 6.083 seconds.
+Date: Tue Oct 29 15:31:20 2019
+Total elapsed time: 6.095 seconds.
 
 tnom = 27
 temp = 27
-method = trap
-totiter = 130522
-traniter = 130517
-tranpoints = 51688
-accept = 36933
-rejected = 14755
-matrix size = 69
-fillins = 78
+method = modified trap
+totiter = 57993
+traniter = 57987
+tranpoints = 22201
+accept = 16466
+rejected = 5735
+matrix size = 126
+fillins = 113
 solver = Alternate
-Thread vector: 56.9/20.2[3] 4.9/3.8[3] 10.4/5.0[3] 1.4/2.4[1]  2592/500
-Matrix Compiler1: 12.51 KB object code size  4.1/2.7/[1.7]
-Matrix Compiler2: 9.13 KB object code size  1.8/2.1/[1.1]
+Thread vector: 115.0/52.4[5] 12.1/7.2[5] 29.6/17.6[5] 3.3/5.5[1]  2592/500
+Matrix Compiler1: 16.33 KB object code size  11.4/9.4/[5.0]
+Matrix Compiler2: 14.29 KB object code size  8.0/8.4/[3.5]
 

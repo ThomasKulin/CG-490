@@ -90,6 +90,12 @@
       </list>
     </option>
   </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
   <component name="ProjectId" id="1SZwb55gyjyPvnC54Kl6BQuQZsY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -279,21 +285,20 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="7" />
-    <editor active="true" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15753424" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49894625" visible="true" weight="0.22968581" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49841937" visible="true" weight="0.22968581" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.38678223" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.49315068" weight="0.24593717" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.5995785" weight="0.33802816" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50105375" side_tool="true" weight="0.30985916" />
+      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015806" side_tool="true" weight="0.22968581" />
       <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49947312" weight="0.36078006" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
