@@ -11,4 +11,5 @@ Components
 
 Digital logic optical sensor: https://www.digikey.com/product-detail/en/OPB819Z/365-1262-ND/1015177
 Mosfet alternative (cheaper): https://www.digikey.ca/product-detail/en/STP310N10F7/497-13233-5-ND/3598099
+gate driver: https://www.digikey.ca/product-detail/en/microchip-technology/MCP1407-E-SN/MCP1407-E-SN-ND/1228639
 TVS diode: https://www.digikey.ca/product-detail/en/littelfuse-inc/SMDJ28A/SMDJ28ACT-ND/1835367
