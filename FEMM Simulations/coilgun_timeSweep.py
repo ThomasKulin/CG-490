@@ -7,8 +7,7 @@ import os
 
 # TEST PARAMS --- Units in cm
 # filename = "7mmCoil_192T_156A"
-# filename = "3.2mmCoil_100T_246A"
-filename = "14mmDia"
+filename = "3.2mmCoil_100T_246A"
 
 current = 246
 sensorPos = 0.005
