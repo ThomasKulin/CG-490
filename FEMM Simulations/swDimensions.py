@@ -58,7 +58,7 @@ def main():
         for r in range(len(rad_iter)):
             # set projectile and coil geometry
             projectile.setDimensions(rad_iter[r], len_iter[l])
-            outerRad, exactLayers, numLayers, wireLength, wireResistance, numTurns, L = coil.calculateProperties(projectile.getRadius(), projectile.getLength(), inductance, wireDiameter / 10, wireResistivity)
+            outerRad, exactLayers, numLayers, wireLength, wireResistance, numTurns, L = coil.fixedInductance(projectile.getRadius(), projectile.getLength(), inductance, wireDiameter / 10, wireResistivity)
             coil.setDimensions(projectile.getRadius(), outerRad, projectile.getLength())
             # set coil turns and approximate current
             coilCurrent = 50 / (wireResistance + circuitResistance)
@@ -126,7 +126,7 @@ class Coil:
         self.nodes[3][0] = rInner
 
 
-    def calculateProperties(self, r1, length, inductance, wireDia, wireRes):
+    def fixedInductance(self, r1, length, inductance, wireDia, wireRes):
         # Wheeler's approx for multilayer inductors is L [uH] = 31.6 * N^2 * r1^2 / (6*r1 + 9*x + 10*(r2-r1))
         # N is number of turns, r1 is inner radius [m], r2 is outer radius [m], x is length [m]
         # rearranging this we can calculate the dimensions of a coil for a specific inductance
@@ -136,7 +136,7 @@ class Coil:
         length_inches = length/2.54
         wireDia_inches = wireDia/2.54
 
-        turnsPerLayer = int(length_inches / wireDia_inches)  # convert length to mm before dividing by mm
+        turnsPerLayer = int(length_inches / wireDia_inches)
         for numLayers in range(100):
             r2_inches = wireDia_inches * numLayers + r1_inches
             a = (r1_inches + r2_inches) / 2
@@ -158,6 +158,34 @@ class Coil:
                 return r2_inches * 2.54, N / turnsPerLayer, numLayers, wireLength, wireResistance, N, L
         return -1
 
+
+    def fixedResistance(self, r1, length, resistance, wireDia, wireRes):
+        # Wheeler's approx for multilayer inductors is L [uH] = 31.6 * N^2 * r1^2 / (6*r1 + 9*x + 10*(r2-r1))
+        # N is number of turns, r1 is inner radius [m], r2 is outer radius [m], x is length [m]
+        # rearranging this we can calculate the dimensions of a coil for a specific inductance
+
+        # convert units to inches
+        r1_inches = r1/2.54
+        length_inches = length/2.54
+        wireDia_inches = wireDia/2.54
+        turnsPerLayer = int(length_inches / wireDia_inches)
+        wireLength = resistance/wireRes  # wire length in meters
+        numLayers = 1
+        N = 0
+        while wireLength > 2 * np.pi * (r1/100 + numLayers*wireDia/200) *turnsPerLayer:  # determine number of layers
+            wireLength -= 2 * np.pi * (r1/100 + numLayers*wireDia/200) *turnsPerLayer
+            N += turnsPerLayer
+            numLayers += 1
+        if wireLength > 0:
+           N += wireLength/(2 * np.pi * (r1/100 + (numLayers-1)*wireDia/200))
+           wireLength =0
+        r2_inches = wireDia_inches * numLayers + r1_inches
+        a = (r1_inches + r2_inches) / 2
+        b = length_inches
+        c = r2_inches - r1_inches
+        L = 0.8 * N * N * a * a / (6 * a + 9 * b + 10 * c)  # calculate final coil inductance
+
+        return r2_inches * 2.54, N / turnsPerLayer, numLayers, resistance/wireRes, N, L
 
 class Projectile:
     def __init__(self, nodes):
