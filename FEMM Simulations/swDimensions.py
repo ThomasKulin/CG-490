@@ -29,9 +29,9 @@ len_start = 4
 len_stop = 4
 len_step = 1
 # projectile radius [cm] (also changes the inner radius of the coil)
-rad_start = 0.45
-rad_stop = 0.45
-rad_step = 0.16
+rad_start = 0.2
+rad_stop = 1
+rad_step = 0.1
 
 def main():
     coil = Coil([[0.32, 3], [3.32, 3], [3.32, 2], [0.32, 2]])
@@ -47,8 +47,11 @@ def main():
     dataDir = 'Data\\DimensionSweep ' + DateTime
     os.makedirs(dataDir, exist_ok=True)
     workbook = xl.Workbook(dataDir + '\\' + dataFileName + ".xlsx")
-    worksheet = workbook.add_worksheet()
-    worksheet.write(0, 0, 'Position [cm]')
+    forcesheet = workbook.add_worksheet('Force vs. Position')
+    indsheet = workbook.add_worksheet('Coil vs. Inductance')
+    forcesheet.write(0, 0, 'Position [cm]')
+    indsheet.write(0, 0, 'Coil Geometry')
+    indsheet.write(0, 1, 'Inductance [uH]')
 
     # Calculate required iterations
     pos_iter = np.arange(pos_start, pos_stop+0.001, pos_step)
@@ -75,8 +78,10 @@ def main():
             femm.mi_setblockprop('18 AWG', 1, 0, 'Coil', 0, 15, numTurns)
             femm.mi_movetranslate(0, 0)  # solves a bug where group 15 doesn't deselect until a movetranslate
 
-            worksheet.write(0, (l*len(rad_iter)+r) + 1, 'len = ' + str(round(projectile.getLength() * 10)) + ' mm rad = ' + str(round(projectile.getRadius() * 10)) + ' mm Force [N]')
-
+            forcesheet.write(0, (l*len(rad_iter)+r) + 1, 'len = ' + str(round(projectile.getLength() * 10)) + ' mm rad = ' + str(round(projectile.getRadius() * 10)) + ' mm Force [N]')
+            indsheet.write((l*len(rad_iter)+r) + 1, 0, 'len = ' + str(round(projectile.getLength() * 10)) + ' mm rad = ' + str(round(projectile.getRadius() * 10)) + ' mm')
+            indsheet.write((l*len(rad_iter)+r) + 1, 1, L)
+            indsheet.write((l * len(rad_iter) + r) + 1, 2, R+circuitResistance)
             print("Radius Iteration:", r, "\tLayers:", numLayers, "\t Turns:", numTurns, '\tCoil Length:', round(projectile.getLength(), 6), '[cm]', '\tCurrent:', round(coilCurrent, 6), '[A]\tIR:', round(projectile.getRadius(), 6), '[cm]', '\tOR:', round(outerRad, 6), '[cm]', '\tWire Length:', wireLength, '[m]', '\tWire Resistance:' + str(round(R,4)) + '[ohm]', '\tInductance', L, '[uH]')
 
             for p in range(len(pos_iter)):
@@ -89,8 +94,8 @@ def main():
                 f[l][r][p] = fz
 
                 # data capture out
-                worksheet.write(p + 1, 0, z[l][r][p])
-                worksheet.write(p + 1, (l*len(rad_iter)+r) + 1, f[l][r][p])
+                forcesheet.write(p + 1, 0, z[l][r][p])
+                forcesheet.write(p + 1, (l*len(rad_iter)+r) + 1, f[l][r][p])
 
                 projectile.moveZ(pos_step)  # move projectile forward by pos_step cm
 
