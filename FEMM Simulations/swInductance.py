@@ -6,6 +6,9 @@ import numpy as np
 import math
 import os
 
+from objects import Coil
+from objects import Projectile
+
 # TEST PARAMS --- Units in cm
 filename = "7mmCoil_192T_156A_swDimensions"
 dataFileName = "32mm_rad_vs_ind"
@@ -40,7 +43,7 @@ def main():
     # set up data capture
     DateTime = datetime.datetime.now().strftime("%Y_%m_%d %H_%M").replace('.', '-')
     dataDir = 'Data\\InductanceSweep ' + DateTime
-    os.makedirs(dataDir)
+    os.makedirs(dataDir, exist_ok=True)
     workbook = xl.Workbook(dataDir + '\\' + dataFileName + ".xlsx")
     worksheet = workbook.add_worksheet()
     worksheet.write(0, 0, 'Position [cm]')
@@ -58,7 +61,7 @@ def main():
         for r in range(len(rad_iter)):
             # set projectile and coil geometry
             projectile.setDimensions(rad_iter[r], length)
-            outerRad, exactLayers, numLayers, wireLength, wireResistance, numTurns, L = coil.calculateProperties(projectile.getRadius(), projectile.getLength(), ind_iter[l], wireDiameter / 10, wireResistivity)
+            outerRad, exactLayers, numLayers, wireLength, wireResistance, numTurns, L = coil.fixedInductance(projectile.getRadius(), projectile.getLength(), ind_iter[l], wireDiameter / 10, wireResistivity)
             coil.setDimensions(projectile.getRadius(), outerRad, projectile.getLength())
             # set coil turns and approximate current
             coilCurrent = 50 / (wireResistance + circuitResistance)
@@ -90,160 +93,6 @@ def main():
 
     femm.closefemm()
     workbook.close()
-
-
-class Coil:
-    def __init__(self, nodes):
-        #            N: 10 (r, z), N 11,     N 12,        N 13
-        self.groups = [10, 11, 12, 13]
-        self.nodes = nodes
-
-    def getLength(self):
-        return self.nodes[0][1] - self.nodes[3][1]
-
-    def getIR(self):
-        return self.nodes[0][0]
-
-    def getOR(self):
-        return self.nodes[1][1]
-
-    def setDimensions(self, rInner, rOuter, len):
-        if self.nodes[3][0] <= rInner:
-            femm.mi_selectgroup(11)
-            femm.mi_movetranslate(rOuter - self.nodes[1][0], len - (self.nodes[1][1] - self.nodes[2][1]))
-            self.nodes[1][0] = rOuter
-            self.nodes[1][1] = len + self.nodes[2][1]
-            femm.mi_selectgroup(12)
-            femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
-            self.nodes[2][0] = rOuter
-            femm.mi_selectgroup(15)  # block label
-            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
-            femm.mi_selectgroup(10)
-            femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
-            self.nodes[0][0] = rInner
-            self.nodes[0][1] = len + self.nodes[3][1]
-            femm.mi_selectgroup(13)
-            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
-            self.nodes[3][0] = rInner
-        else:
-            femm.mi_selectgroup(10)
-            femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
-            self.nodes[0][0] = rInner
-            self.nodes[0][1] = len + self.nodes[3][1]
-            femm.mi_selectgroup(13)
-            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
-            femm.mi_selectgroup(15)  # block label
-            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
-            self.nodes[3][0] = rInner
-            femm.mi_selectgroup(11)
-            femm.mi_movetranslate(rOuter - self.nodes[1][0], len - (self.nodes[1][1] - self.nodes[2][1]))
-            self.nodes[1][0] = rOuter
-            self.nodes[1][1] = len + self.nodes[2][1]
-            femm.mi_selectgroup(12)
-            femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
-            self.nodes[2][0] = rOuter
-
-    def calculateProperties(self, r1, length, inductance, wireDia, wireRes):
-        # Wheeler's approx for multilayer inductors is L [uH] = 31.6 * N^2 * r1^2 / (6*r1 + 9*x + 10*(r2-r1))
-        # N is number of turns, r1 is inner radius [m], r2 is outer radius [m], x is length [m]
-        # rearranging this we can calculate the dimensions of a coil for a specific inductance
-
-        # convert units to inches
-        r1_inches = r1/2.54
-        length_inches = length/2.54
-        wireDia_inches = wireDia/2.54
-
-        turnsPerLayer = int(length_inches / wireDia_inches)  # convert length to mm before dividing by mm
-        for numLayers in range(100):
-            r2_inches = wireDia_inches * numLayers + r1_inches
-            a = (r1_inches + r2_inches) / 2
-            b = length_inches
-            c = r2_inches - r1_inches
-            N = np.sqrt(inductance * (6 * a + 9 * b + 10 * c) / (0.8 * a * a))
-            if int(math.ceil(N / turnsPerLayer)) <= numLayers:
-                L = 0.8 * N * N * a * a / (6 * a + 9 * b + 10 * c)  # calculate final coil inductance
-                wireLength = 0
-                remainingTurns = N
-                for n in range(numLayers):
-                    if remainingTurns >= turnsPerLayer:
-                        wireLength += 2 * np.pi * (r1/100 + wireDia/200 + n*wireDia/100) *turnsPerLayer
-                        remainingTurns -= turnsPerLayer
-                    else:
-                        wireLength += 2 * np.pi * (r1 / 100 + wireDia / 2000) * remainingTurns
-                        remainingTurns -= remainingTurns
-                wireResistance = wireRes * wireLength
-                return r2_inches * 2.54, N / turnsPerLayer, numLayers, wireLength, wireResistance, N, L
-        return -1
-
-
-class Projectile:
-    def __init__(self, nodes):
-        self.groups = [1, 2, 3, 4]
-        self.nodes = nodes
-
-    def getLength(self):
-        return self.nodes[0][1] - self.nodes[3][1]
-
-    def getRadius(self):
-        return self.nodes[1][0]
-
-    def getXY(self):
-        r = (self.nodes[1][0]+self.nodes[0][0])/2
-        z = (self.nodes[0][1]+self.nodes[3][1])/2
-        return r, z
-
-    def setDimensions(self, rad, len):
-        femm.mi_selectgroup(1)
-        femm.mi_movetranslate(0, 0)
-        femm.mi_selectgroup(2)
-        femm.mi_movetranslate(rad - self.nodes[1][0], 0)
-        self.nodes[1][0] = rad
-        femm.mi_selectgroup(3)
-        femm.mi_movetranslate(rad - self.nodes[2][0], -(len + self.nodes[2][1]))
-        self.nodes[2][0] = rad
-        self.nodes[2][1] = -len
-        femm.mi_selectgroup(4)
-        femm.mi_movetranslate(0, -(len + self.nodes[3][1]))
-        self.nodes[3][1] = -len
-
-    def moveZ(self, mIter):
-        if mIter > 0:  # the order you move the points matters for some unknown reason..
-            femm.mi_selectgroup(1)
-            femm.mi_movetranslate(0, mIter)
-            femm.mi_selectgroup(2)
-            femm.mi_movetranslate(0, mIter)
-            femm.mi_selectgroup(3)
-            femm.mi_movetranslate(0, mIter)
-            femm.mi_selectgroup(4)
-            femm.mi_movetranslate(0, mIter)
-        elif mIter < 0:
-            femm.mi_selectgroup(4)
-            femm.mi_movetranslate(0, mIter)
-            femm.mi_selectgroup(3)
-            femm.mi_movetranslate(0, mIter)
-            femm.mi_selectgroup(2)
-            femm.mi_movetranslate(0, mIter)
-            femm.mi_selectgroup(1)
-            femm.mi_movetranslate(0, mIter)
-        # update node coordinate list
-        for n in range(len(self.nodes)):
-            self.nodes[n][1] += mIter
-
-    def incrementLength(self, lIter):
-        femm.mi_selectgroup(3)
-        femm.mi_movetranslate(0, -lIter)
-        femm.mi_selectgroup(4)
-        femm.mi_movetranslate(0, -lIter)
-        self.nodes[2][1] -= lIter
-        self.nodes[3][1] -= lIter
-
-    def incrementRadius(self, rIter):
-        femm.mi_selectgroup(2)
-        femm.mi_movetranslate(rIter, 0)
-        femm.mi_selectgroup(3)
-        femm.mi_movetranslate(rIter, 0)
-        self.nodes[1][0] += rIter
-        self.nodes[2][0] += rIter
 
 if __name__ == "__main__":
     main()
