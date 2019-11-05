@@ -21,22 +21,40 @@ class Coil:
         return self.nodes[1][1]
 
     def setDimensions(self, rInner, rOuter, len):
-        femm.mi_selectgroup(11)
-        femm.mi_movetranslate(rOuter - self.nodes[1][0], len - (self.nodes[1][1] - self.nodes[2][1]))
-        self.nodes[1][0] = rOuter
-        self.nodes[1][1] = len + self.nodes[2][1]
-        femm.mi_selectgroup(12)
-        femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
-        self.nodes[2][0] = rOuter
-        femm.mi_selectgroup(15)  # block label
-        femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
-        femm.mi_selectgroup(10)
-        femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
-        self.nodes[0][0] = rInner
-        self.nodes[0][1] = len + self.nodes[3][1]
-        femm.mi_selectgroup(13)
-        femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
-        self.nodes[3][0] = rInner
+        if self.nodes[3][0] <= rInner:
+            femm.mi_selectgroup(11)
+            femm.mi_movetranslate(rOuter - self.nodes[1][0], len - (self.nodes[1][1] - self.nodes[2][1]))
+            self.nodes[1][0] = rOuter
+            self.nodes[1][1] = len + self.nodes[2][1]
+            femm.mi_selectgroup(12)
+            femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
+            self.nodes[2][0] = rOuter
+            femm.mi_selectgroup(15)  # block label
+            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+            femm.mi_selectgroup(10)
+            femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
+            self.nodes[0][0] = rInner
+            self.nodes[0][1] = len + self.nodes[3][1]
+            femm.mi_selectgroup(13)
+            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+            self.nodes[3][0] = rInner
+        else:
+            femm.mi_selectgroup(10)
+            femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
+            self.nodes[0][0] = rInner
+            self.nodes[0][1] = len + self.nodes[3][1]
+            femm.mi_selectgroup(13)
+            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+            femm.mi_selectgroup(15)  # block label
+            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+            self.nodes[3][0] = rInner
+            femm.mi_selectgroup(11)
+            femm.mi_movetranslate(rOuter - self.nodes[1][0], len - (self.nodes[1][1] - self.nodes[2][1]))
+            self.nodes[1][0] = rOuter
+            self.nodes[1][1] = len + self.nodes[2][1]
+            femm.mi_selectgroup(12)
+            femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
+            self.nodes[2][0] = rOuter
 
 
     def fixedInductance(self, r1, length, inductance, wireDia, wireRes):
@@ -117,6 +135,11 @@ class Projectile:
         r = (self.nodes[1][0]+self.nodes[0][0])/2
         z = (self.nodes[0][1]+self.nodes[3][1])/2
         return r, z
+
+    def getMass(self):
+        D = 8050  # [Kg/m^3]
+        V = np.pi * (self.getRadius()/100)**2 * self.getLength()/100  # [m^3]
+        return D*V
 
     def setDimensions(self, rad, len):
         femm.mi_selectgroup(1)
