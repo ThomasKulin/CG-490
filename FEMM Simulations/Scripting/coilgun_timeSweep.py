@@ -24,13 +24,13 @@ maxStages = 9
 
 # set up FEMM stuff
 femm.openfemm()
-femm.opendocument(filename + ".fem")
-femm.mi_saveas("temp_time.fem")
+femm.opendocument('..\\'+ filename + ".fem")
+femm.mi_saveas('..\\'+"temp_time.fem")
 femm.mi_seteditmode("group")
 
 # set up data capture
 DateTime = datetime.datetime.now().strftime("%Y_%m_%d %H_%M").replace('.', '-')
-dataDir = 'Data\\TimeSweep ' + DateTime
+dataDir = '..\\'+'Data\\TimeSweep ' + DateTime
 os.makedirs(dataDir, exist_ok=True)
 workbook = xl.Workbook(dataDir + '\\' + filename + ".xlsx")
 worksheet = workbook.add_worksheet()

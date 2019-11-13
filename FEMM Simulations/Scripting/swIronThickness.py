@@ -15,13 +15,13 @@ iron_step = 0.2
 
 # set up FEMM stuff
 femm.openfemm()
-femm.opendocument(filename + ".fem")
-femm.mi_saveas("temp.fem")
+femm.opendocument('..\\'+filename + ".fem")
+femm.mi_saveas('..\\'+"temp.fem")
 femm.mi_seteditmode("group")
 
 # set up data capture
 DateTime = datetime.datetime.now().strftime("%Y_%m_%d %H_%M").replace('.', '-')
-dataDir = 'Data\\IronThickness ' + DateTime
+dataDir = '..\\'+'Data\\IronThickness ' + DateTime
 os.makedirs(dataDir)
 workbook = xl.Workbook(dataDir + '\\' + filename + ".xlsx")
 worksheet = workbook.add_worksheet()

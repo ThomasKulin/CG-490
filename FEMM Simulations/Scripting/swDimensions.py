@@ -40,13 +40,13 @@ def main():
     projectile = Projectile([[0, 0], [0.32, 0], [0.32, -1], [0, -1]])
     # set up FEMM stuff
     femm.openfemm()
-    femm.opendocument(filename + ".fem")
-    femm.mi_saveas("temp.fem")
+    femm.opendocument('..\\'+ filename + ".fem")
+    femm.mi_saveas('..\\'+"temp.fem")
     femm.mi_seteditmode("group")
 
     # set up data capture
     DateTime = datetime.datetime.now().strftime("%Y_%m_%d %H_%M").replace('.', '-')
-    dataDir = 'Data\\DimensionSweep ' + DateTime
+    dataDir = '..\\'+'Data\\DimensionSweep ' + DateTime
     os.makedirs(dataDir, exist_ok=True)
     workbook = xl.Workbook(dataDir + '\\' + dataFileName + ".xlsx")
     forcesheet = workbook.add_worksheet('Force vs. Position')

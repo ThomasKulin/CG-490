@@ -15,13 +15,13 @@ dia_step = 0.1
 
 # set up FEMM stuff
 femm.openfemm()
-femm.opendocument(filename + ".fem")
-femm.mi_saveas("temp.fem")
+femm.opendocument('..\\'+filename + ".fem")
+femm.mi_saveas('..\\'+"temp.fem")
 femm.mi_seteditmode("group")
 
 # set up data capture
 DateTime = datetime.datetime.now().strftime("%Y_%m_%d %H_%M").replace('.', '-')
-dataDir = 'Data\\WallThickness ' + DateTime
+dataDir = '..\\'+'Data\\WallThickness ' + DateTime
 os.makedirs(dataDir)
 workbook = xl.Workbook(dataDir + '\\' + filename + ".xlsx")
 worksheet = workbook.add_worksheet()

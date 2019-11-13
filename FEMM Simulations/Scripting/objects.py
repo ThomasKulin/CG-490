@@ -14,10 +14,19 @@ import os
 
 
 class Coil:
-    def __init__(self, nodes):
+    def __init__(self, nodes, groups=[10, 11, 12, 13], name='Coil', propGroup=15):
         #            N: 10 (r, z), N 11,     N 12,        N 13
-        self.groups = [10, 11, 12, 13]
         self.nodes = nodes
+        self.groups = groups
+        self.name = name
+        self.propGroup = propGroup
+        self.exactLayers = None
+        self.numLayers = None
+        self.wireLength = None
+        self.numTurns = None
+        self.resistance = None
+        self.inductance = None
+        self.triggerPosition = -0.5
 
     def getLength(self):
         return self.nodes[0][1] - self.nodes[3][1]
@@ -27,6 +36,9 @@ class Coil:
 
     def getOR(self):
         return self.nodes[1][1]
+
+    def getTriggerPosition(self):
+        return self.nodes[3][1]+self.triggerPosition
 
     def setDimensions(self, rInner, rOuter, len):
         if self.nodes[3][0] <= rInner:
@@ -64,6 +76,11 @@ class Coil:
             femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
             self.nodes[2][0] = rOuter
 
+    def setCoilCurrent(self, current):
+        femm.mi_setcurrent(self.name, current)
+        femm.mi_selectgroup(self.propGroup)
+        femm.mi_setblockprop('18 AWG', 1, 0, self.name, 0, 15, self.numTurns)
+        femm.mi_movetranslate(0, 0)  # solves a bug where group 15 doesn't deselect until a movetranslate
 
     def fixedInductance(self, r1, length, inductance, wireDia, wireRes):
         # Wheeler's approx for multilayer inductors is L [uH] = 31.6 * N^2 * r1^2 / (6*r1 + 9*x + 10*(r2-r1))
@@ -94,6 +111,12 @@ class Coil:
                         wireLength += 2 * np.pi * (r1 / 100 + wireDia / 2000) * remainingTurns
                         remainingTurns -= remainingTurns
                 wireResistance = wireRes * wireLength
+                self.exactLayers = N / turnsPerLayer
+                self.numLayers = numLayers
+                self.wireLength = wireLength
+                self.numTurns = N
+                self.resistance = wireResistance
+                self.inductance = L
                 return r2_inches * 2.54, N / turnsPerLayer, numLayers, wireLength, wireResistance, N, L
         return -1
 
@@ -125,7 +148,12 @@ class Coil:
         c = r2_inches - r1_inches
         L = 0.8 * N * N * a * a / (6 * a + 9 * b + 10 * c)  # calculate final coil inductance
         R = wireLength * wireRes
-
+        self.exactLayers = N / turnsPerLayer
+        self.numLayers = numLayers
+        self.wireLength = wireLength
+        self.numTurns = N
+        self.resistance = R
+        self.inductance = L
         return r2_inches * 2.54, N / turnsPerLayer, numLayers, R, resistance/wireRes, N, L
 
 class Projectile:
@@ -150,18 +178,19 @@ class Projectile:
         return D*V
 
     def setDimensions(self, rad, len):
+        z_correction = len-self.getLength()
         femm.mi_selectgroup(1)
         femm.mi_movetranslate(0, 0)
         femm.mi_selectgroup(2)
         femm.mi_movetranslate(rad - self.nodes[1][0], 0)
         self.nodes[1][0] = rad
         femm.mi_selectgroup(3)
-        femm.mi_movetranslate(rad - self.nodes[2][0], -(len + self.nodes[2][1]))
+        femm.mi_movetranslate(rad - self.nodes[2][0], -z_correction)
         self.nodes[2][0] = rad
-        self.nodes[2][1] = -len
+        self.nodes[2][1] -= z_correction
         femm.mi_selectgroup(4)
-        femm.mi_movetranslate(0, -(len + self.nodes[3][1]))
-        self.nodes[3][1] = -len
+        femm.mi_movetranslate(0, -z_correction)
+        self.nodes[3][1] -= z_correction
 
     def moveZ(self, mIter):
         if mIter > 0:  # the order you move the points matters for some unknown reason..
@@ -185,6 +214,11 @@ class Projectile:
         # update node coordinate list
         for n in range(len(self.nodes)):
             self.nodes[n][1] += mIter
+
+    def setPosition(self, z):
+        z_pos = self.nodes[0][1]
+        z_correction = z - z_pos
+        self.moveZ(z_correction)
 
     def incrementLength(self, lIter):
         femm.mi_selectgroup(3)
