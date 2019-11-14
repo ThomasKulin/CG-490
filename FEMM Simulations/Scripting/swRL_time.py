@@ -27,13 +27,14 @@ circuitResistance = 0.15  # [ohm]
 # projectile params
 pos_start = -0.5  # [cm]
 pos_end = 6
+v_start = 15  # starting velocity in [m/s]
 # time [s]
 time_start = 0
 time_stop = 5e-2
 time_step = 5e-5
 # coil inductance [uH] , changes R_outer
 ind_start = 20
-ind_stop = 140
+ind_stop = 220
 ind_step = 20
 # coil resistance [ohm] , changes R_outer
 res_start = 0.01
@@ -70,7 +71,7 @@ def main():
     z = [[coil.getTriggerPosition()/100 for p in range(len(time_iter))] for r in range(len(var_iter))]  # z position
     f = [[0 for p in range(len(time_iter))] for r in range(len(var_iter))]  # force
     a = [[0 for r in range(len(time_iter))] for l in range(len(var_iter))]  # acceleration
-    v = [[0 for r in range(len(time_iter))] for l in range(len(var_iter))]  # velocity
+    v = [[v_start for r in range(len(time_iter))] for l in range(len(var_iter))]  # velocity
     I = [[0 for r in range(len(time_iter))] for l in range(len(var_iter))]  # coil current
     stage = 0
     for r in range(len(var_iter)):
