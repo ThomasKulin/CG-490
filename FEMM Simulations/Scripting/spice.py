@@ -1,8 +1,8 @@
 from objects import LTSpice
 import matplotlib.pyplot as plt
 
-asc_filepath = "SPICE Dependencies\\offTime.asc"
-raw_filepath = 'SPICE Dependencies\\offTime.raw'
+asc_filepath = "..\\SPICE Dependencies\\offTime.asc"
+raw_filepath = "..\\SPICE Dependencies\\offTime.raw"
 exe_path = "C:\\Program Files\\LTC\\LTspiceXVII\\XVIIx64.exe"
 spice = LTSpice(asc_filepath, raw_filepath, exe_path)
 

@@ -13,6 +13,61 @@ import numpy as np
 import os
 
 
+
+class LTSpice:
+    def __init__(self, asc_filepath, raw_filepath, exe_path="C:\\Program Files\\LTC\\LTspiceXVII\\XVIIx64.exe"):
+        self.asc_filepath = asc_filepath  # circuit definition file
+        self.raw_filepath = raw_filepath  # simulation output file
+        self.exe_path = exe_path  # path to LT Spice exe
+        self.data = None
+
+    def set_param(self, param, param_val, overwrite=True):
+        f, abs_path = mkstemp()
+        with open(abs_path, 'w') as new_file:
+            with open(self.asc_filepath) as old_file:
+                for line in old_file:
+                    line_list = line.split(' ')
+                    if line_list[0] == 'TEXT':
+                        for element_num, element in enumerate(line_list):
+                            if element.split('=')[0] == param:
+                                line_list[element_num] = param + '=' + str(param_val)
+                        if line_list[-1][-1] != '\n':
+                            line_list[-1] = line_list[-1] + '\n'
+                        new_file.write(' '.join(line_list))
+                    else:
+                        new_file.write(line)
+        os.close(f)
+        if overwrite:
+            os.remove(self.asc_filepath)
+            move(abs_path, self.asc_filepath)
+        else:
+            move(abs_path, self.asc_filepath[:-4] + '_generated.asc')
+
+    def simulate(self):
+        # run SPICE simulation
+        file_path = self.asc_filepath[:-4]  # Use .asc file, but remove file ending
+        file_name = str(file_path.split('\\')[-1])
+        print('Simulation starting: ' + file_name + '.asc')
+        call('"' + self.exe_path + '" -netlist "' + file_path + '.asc"')
+        call('"' + self.exe_path + '" -b "' + file_path + '.net"')
+        size = os.path.getsize(file_path + '.raw')
+        print('Simulation finished: ' + file_name + '.raw created (' + str(size / 1000) + ' kB)')
+
+        # get SPICE simulation output
+        self.data = ltspice.Ltspice(file_path + '.raw')
+        # Make sure that the .raw file is located in the correct path
+        self.data.parse()
+
+    def getTime(self):
+        return self.data.getTime()
+
+    def getNearestTime(self, time):
+        return min(self.data.getTime(), key=lambda x: abs(x - time))
+
+    def getData(self, param):
+        return self.data.getData(param)
+
+
 class Coil:
     def __init__(self, nodes, groups=[10, 11, 12, 13], name='Coil', propGroup=15):
         #            N: 10 (r, z), N 11,     N 12,        N 13
@@ -27,6 +82,11 @@ class Coil:
         self.resistance = None
         self.inductance = None
         self.triggerPosition = -0.5
+
+        off_filepath = "..\\SPICE Dependencies\\offTime"
+        on_filepath = "..\\SPICE Dependencies\\onTime"
+        self.off_sim = LTSpice(off_filepath + '.asc', off_filepath + '.raw')
+        self.on_sim = LTSpice(on_filepath + '.asc', on_filepath + '.raw')
 
     def getLength(self):
         return self.nodes[0][1] - self.nodes[3][1]
@@ -81,6 +141,15 @@ class Coil:
         femm.mi_selectgroup(self.propGroup)
         femm.mi_setblockprop('18 AWG', 1, 0, self.name, 0, 15, self.numTurns)
         femm.mi_movetranslate(0, 0)  # solves a bug where group 15 doesn't deselect until a movetranslate
+
+    def calculateCoilResponse(self, peakCurrent):
+        self.on_sim.set_param('I_COIL', 0)
+        self.off_sim.set_param('I_COIL', peakCurrent)
+        self.on_sim.simulate()
+        self.off_sim.simulate()
+        on_data = [self.on_sim.getTime(), self.on_sim.getData('I(L1)'), self.on_sim.getData('V(Vo)')]
+        off_data = [self.off_sim.getTime(), self.off_sim.getData('I(L1)'), self.off_sim.getData('V(Vo)')]
+        return on_data, off_data
 
     def fixedInductance(self, r1, length, inductance, wireDia, wireRes):
         # Wheeler's approx for multilayer inductors is L [uH] = 31.6 * N^2 * r1^2 / (6*r1 + 9*x + 10*(r2-r1))
@@ -167,6 +236,9 @@ class Projectile:
     def getRadius(self):
         return self.nodes[1][0]
 
+    def getPosition(self):
+        return self.nodes[0][1]
+
     def getXY(self):
         r = (self.nodes[1][0]+self.nodes[0][0])/2
         z = (self.nodes[0][1]+self.nodes[3][1])/2
@@ -236,56 +308,3 @@ class Projectile:
         self.nodes[1][0] += rIter
         self.nodes[2][0] += rIter
 
-
-class LTSpice:
-    def __init__(self, asc_filepath, raw_filepath, exe_path):
-        self.asc_filepath = asc_filepath  # circuit definition file
-        self.raw_filepath = raw_filepath  # simulation output file
-        self.exe_path = exe_path  # path to LT Spice exe
-        self.data = None
-
-    def set_param(self, param, param_val, overwrite=True):
-        f, abs_path = mkstemp()
-        with open(abs_path, 'w') as new_file:
-            with open(self.asc_filepath) as old_file:
-                for line in old_file:
-                    line_list = line.split(' ')
-                    if line_list[0] == 'TEXT':
-                        for element_num, element in enumerate(line_list):
-                            if element.split('=')[0] == param:
-                                line_list[element_num] = param + '=' + str(param_val)
-                        if line_list[-1][-1] != '\n':
-                            line_list[-1] = line_list[-1] + '\n'
-                        new_file.write(' '.join(line_list))
-                    else:
-                        new_file.write(line)
-        os.close(f)
-        if overwrite:
-            os.remove(self.asc_filepath)
-            move(abs_path, self.asc_filepath)
-        else:
-            move(abs_path, self.asc_filepath[:-4] + '_generated.asc')
-
-    def simulate(self):
-        # run SPICE simulation
-        file_path = self.asc_filepath[:-4]  # Use .asc file, but remove file ending
-        file_name = str(file_path.split('\\')[-1])
-        print('Simulation starting: ' + file_name + '.asc')
-        call('"' + self.exe_path + '" -netlist "' + file_path + '.asc"')
-        call('"' + self.exe_path + '" -b "' + file_path + '.net"')
-        size = os.path.getsize(file_path + '.raw')
-        print('Simulation finished: ' + file_name + '.raw created (' + str(size / 1000) + ' kB)')
-
-        # get SPICE simulation output
-        self.data = ltspice.Ltspice('SPICE Dependencies\\offTime.raw')
-        # Make sure that the .raw file is located in the correct path
-        self.data.parse()
-
-    def getTime(self):
-        return self.data.getTime()
-
-    def getNearestTime(self, time):
-        return min(self.data.getTime(), key=lambda x: abs(x - time))
-
-    def getData(self, param):
-        return self.data.getData(param)

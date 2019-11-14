@@ -1,0 +1,17 @@
+* C:\Users\Thomas Kulin\Documents\Projects\CG-490\FEMM Simulations\SPICE Dependencies\onTime.asc
+V2 N001 0 50 Rser=.12
+L1 N001 Vo {L_COIL} Rser={R_COIL} Cpar=1e-9
+XM1 NC_01 NC_02 NC_03 NC_04 NC_05 STP310N10F7_V3
+XU1 Tcase TopsideCopper Area_Contact_mm2=100 Area_PCB_mm2=10000 Copper_Thickness_oz=1 Tambient=25 LFM=0 PCB_FR4_Thickness_mm=1.5
+XM2 Vo N002 0 Tj Tcase IPB180N10S4_02
+V1 N002 0 20
+.lib OptiMOS-T2_100V.lib
+.tran 0 0.04 0 0.00001
+.lib STP310N10F7_V3.lib
+.ic I(L1) = I_COIL
+.param I_COIL=0
+.param L_COIL=40e-6
+.param R_COIL=0.08
+.lib SOAtherm-PCB.lib
+.backanno
+.end

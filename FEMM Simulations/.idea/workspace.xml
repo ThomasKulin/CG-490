@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f6208e2-d4b1-4aa9-8bc6-de37d325c817" name="Default Changelist" comment="Started writing the simulation writeup report">
-      <change afterPath="$PROJECT_DIR$/Scripting/swRL_time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/FEMM Simulations.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FEMM Simulations.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripting/coilgun_timeSweep.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/coilgun_timeSweep.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripting/objects.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/objects.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripting/swDimensions.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swDimensions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripting/swInductance.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swInductance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripting/swIronThickness.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swIronThickness.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripting/swProjectileLength.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swProjectileLength.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripting/swWallThickness.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swWallThickness.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripting/spice.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/spice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripting/swRL_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swRL_time.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/temp.ans" beforeDir="false" afterPath="$PROJECT_DIR$/temp.ans" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/temp.fem" beforeDir="false" afterPath="$PROJECT_DIR$/temp.fem" afterDir="false" />
     </list>
@@ -19,46 +24,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripting/spice.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="e#0#27#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Scripting/objects.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="181" column="30" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
-              <folding>
-                <element signature="e#0#11#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Scripting/swRL_time.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -70,26 +35,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/spice.py" />
-        <option value="$PROJECT_DIR$/Scripting/Spice/simulation_tools.py" />
-        <option value="$PROJECT_DIR$/Scripting/Spice/config.py" />
-        <option value="$PROJECT_DIR$/Scripting/Spice/run.py" />
-        <option value="$PROJECT_DIR$/Scripting/spice.py" />
-        <option value="$PROJECT_DIR$/Scripting/swResistanceTime.py" />
-        <option value="$PROJECT_DIR$/Scripting/swDimensions.py" />
-        <option value="$PROJECT_DIR$/Scripting/coilgun_timeSweep.py" />
-        <option value="$PROJECT_DIR$/Scripting/swInductance.py" />
-        <option value="$PROJECT_DIR$/Scripting/swIronThickness.py" />
-        <option value="$PROJECT_DIR$/Scripting/swProjectileLength.py" />
-        <option value="$PROJECT_DIR$/Scripting/swWallThickness.py" />
-        <option value="$PROJECT_DIR$/Scripting/swRL_time.py" />
-        <option value="$PROJECT_DIR$/Scripting/objects.py" />
-      </list>
-    </option>
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-9" />
     <option name="y" value="-9" />
@@ -100,36 +45,13 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="FEMM Simulations" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FEMM Simulations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FEMM Simulations" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FEMM Simulations" type="462c0819:PsiDirectoryNode" />
-              <item name="Scripting" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-    </panes>
-  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Scripting" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -171,6 +93,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="spice (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="FEMM Simulations" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripting" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripting/spice.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="spice" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FEMM Simulations" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -183,6 +127,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="C:\Users\ekultho\Documents\Personal\CG 490\FEMM Simulations\Scripting\spice.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -214,28 +159,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="swInductance" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FEMM Simulations" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\ekultho\AppData\Local\Programs\Python\Python36\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\ekultho\Documents\Personal\CG 490\FEMM Simulations\Scripting\swInductance.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="swRL_time" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FEMM Simulations" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -248,6 +171,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripting/swRL_time.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -259,18 +183,18 @@
     </configuration>
     <list>
       <item itemvalue="Python.swDimensions" />
-      <item itemvalue="Python.swInductance" />
       <item itemvalue="Python.plotData" />
       <item itemvalue="Python.spice" />
       <item itemvalue="Python.swRL_time" />
+      <item itemvalue="Python.spice (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.swRL_time" />
+        <item itemvalue="Python.spice (1)" />
         <item itemvalue="Python.spice" />
         <item itemvalue="Python.plotData" />
         <item itemvalue="Python.swDimensions" />
-        <item itemvalue="Python.swInductance" />
       </list>
     </recent_temporary>
   </component>
@@ -286,6 +210,7 @@
       <updated>1570567175400</updated>
       <workItem from="1571784495599" duration="8081000" />
       <workItem from="1572568037330" duration="5539000" />
+      <workItem from="1573687531148" duration="8182000" />
     </task>
     <task id="LOCAL-00001" summary="Started writing the simulation writeup report">
       <created>1571866003156</created>
@@ -297,29 +222,6 @@
     <option name="localTasksCounter" value="2" />
     <servers />
   </component>
-  <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15852048" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49894625" visible="true" weight="0.2857143" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.28712872" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.49315068" weight="0.24593717" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.5995785" weight="0.32248938" />
-      <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.50105375" side_tool="true" weight="0.30985916" />
-      <window_info anchor="bottom" id="Python Console" order="9" sideWeight="0.49947312" weight="0.36078006" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-    </layout>
-  </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
@@ -329,12 +231,6 @@
         <entry key="MAIN">
           <value>
             <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
               <option name="COLUMN_ORDER" />
             </State>
           </value>
@@ -365,8 +261,8 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Scripting/swRL_time.py</url>
-          <line>104</line>
-          <option name="timeStamp" value="7" />
+          <line>100</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -380,180 +276,7 @@
     <SUITE FILE_PATH="coverage/FEMM_Simulations$swDimensions.coverage" NAME="swDimensions Coverage Results" MODIFIED="1572812672721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FEMM_Simulations$plotData.coverage" NAME="plotData Coverage Results" MODIFIED="1572828709775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FEMM_Simulations$swInductance.coverage" NAME="swInductance Coverage Results" MODIFIED="1571792332569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>z[r][i - 1]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>v[r][i]*0.001</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>v[r][i]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>projectile.getMass()</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>min(self.data.getTime(), key=lambda x: abs(x - time))</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Scripting/spice.py" />
-    <entry file="file://$PROJECT_DIR$/Scripting/swDimensions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/plotData.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/Spice/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/Spice/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/spice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/Spice/simulation_tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-255">
-          <caret column="27" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/Spice/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="40" selection-start-line="20" selection-start-column="40" selection-end-line="20" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/xlsxwriter/workbook.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="160" column="8" selection-start-line="160" selection-start-column="8" selection-end-line="160" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/swInductance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/swIronThickness.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/swProjectileLength.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/swWallThickness.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/coilgun_timeSweep.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/swDimensions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="43" column="26" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/swRL_time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="73" column="24" selection-start-line="73" selection-start-column="24" selection-end-line="73" selection-end-column="24" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/objects.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="181" column="30" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <SUITE FILE_PATH="coverage/FEMM_Simulations$spice__1_.coverage" NAME="spice (1) Coverage Results" MODIFIED="1573687928358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripting" />
+    <SUITE FILE_PATH="coverage/FEMM_Simulations$swRL_time.coverage" NAME="swRL_time Coverage Results" MODIFIED="1573695660483" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Scripting" />
   </component>
 </project>
