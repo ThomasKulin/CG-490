@@ -86,9 +86,8 @@ def main():
 
         coil.setDimensions(r_inner, outerRad, length)
         # set coil turns and approximate current
-        peakCurrent = 50.4/(R+circuitResistance)
-        on_data, off_data = coil.calculateCoilResponse(peakCurrent)
-
+        on_data, off_data = coil.calculateCoilResponse( L/1e6, R)
+        peakCurrent = (max(on_data[1]))
         print("Variable Iteration:", r, "\tLayers:", numLayers, "\t Turns:", numTurns, '\tCoil Length:', round(projectile.getLength(), 6), '[cm]', '\tCurrent:', round(peakCurrent, 6), '[A]\tIR:', round(projectile.getRadius(), 6), '[cm]', '\tOR:', round(outerRad, 6), '[cm]', '\tWire Length:', wireLength, '[m]', '\tWire Resistance:' + str(round(R,4)) + '[ohm]', '\tInductance', L, '[uH]')
 
         coilOn = True
@@ -127,7 +126,7 @@ def main():
             if projectile.getPosition() - projectile.getLength() > coil.getTriggerPosition() and coilOn:
                 coilOn = False
                 offTime = time_iter[i]
-            if not coilOn and I[r][i] < 1e3:
+            if not coilOn and I[r][i] < 1e-3:
                 break;
             projectile.moveZ(v[r][i]*time_step * 100)  # move projectile forward by pos_step cm
 

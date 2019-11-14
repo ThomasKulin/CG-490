@@ -142,12 +142,18 @@ class Coil:
         femm.mi_setblockprop('18 AWG', 1, 0, self.name, 0, 15, self.numTurns)
         femm.mi_movetranslate(0, 0)  # solves a bug where group 15 doesn't deselect until a movetranslate
 
-    def calculateCoilResponse(self, peakCurrent):
+    def calculateCoilResponse(self, inductance, resistance):
         self.on_sim.set_param('I_COIL', 0)
-        self.off_sim.set_param('I_COIL', peakCurrent)
+        self.on_sim.set_param('L_COIL', inductance)
+        self.on_sim.set_param('R_COIL', resistance)
         self.on_sim.simulate()
-        self.off_sim.simulate()
         on_data = [self.on_sim.getTime(), self.on_sim.getData('I(L1)'), self.on_sim.getData('V(Vo)')]
+        peakCurrent = max(on_data[1])
+
+        self.off_sim.set_param('I_COIL', peakCurrent)
+        self.off_sim.set_param('L_COIL', inductance)
+        self.off_sim.set_param('R_COIL', resistance)
+        self.off_sim.simulate()
         off_data = [self.off_sim.getTime(), self.off_sim.getData('I(L1)'), self.off_sim.getData('V(Vo)')]
         return on_data, off_data
 
