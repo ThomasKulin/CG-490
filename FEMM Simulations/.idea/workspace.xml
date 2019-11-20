@@ -2,36 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f6208e2-d4b1-4aa9-8bc6-de37d325c817" name="Default Changelist" comment="Started writing the simulation writeup report">
-      <change beforePath="$PROJECT_DIR$/.idea/FEMM Simulations.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FEMM Simulations.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 16_45/a.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 16_45/f.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 16_45/swInductanceVsTime.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 16_45/v.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 16_45/var.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 16_45/z.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 21_10/I.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 21_10/a.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 21_10/f.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 21_10/swInductanceVsTime.xlsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 21_10/v.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 21_10/var.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 21_10/z.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 21_49/swInductanceVsTime.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/TimeRLSweep 2019_11_13 21_49/swInductanceVsTime.xlsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.net" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.net" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.net" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.net" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripting/swRL_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swRL_time.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.ans" beforeDir="false" afterPath="$PROJECT_DIR$/temp.ans" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.fem" beforeDir="false" afterPath="$PROJECT_DIR$/temp.fem" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -44,7 +15,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripting/spice.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
+            <state relative-caret-position="306">
               <caret line="19" selection-start-line="19" selection-end-line="19" />
               <folding>
                 <element signature="e#0#27#0" expanded="true" />
@@ -56,7 +27,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripting/objects.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4046">
+            <state relative-caret-position="4199">
               <caret line="259" column="30" selection-start-line="259" selection-start-column="30" selection-end-line="259" selection-end-column="30" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -68,7 +39,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Scripting/swRL_time.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-323">
+            <state relative-caret-position="17">
               <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
             </state>
           </provider>
@@ -107,10 +78,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1928" />
-    <option name="y" value="-8" />
-    <option name="width" value="260" />
-    <option name="height" value="142" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectId" id="1SZwb55gyjyPvnC54Kl6BQuQZsY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -274,10 +245,10 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.swDimensions" />
-      <item itemvalue="Python.swInductance" />
       <item itemvalue="Python.plotData" />
       <item itemvalue="Python.spice" />
+      <item itemvalue="Python.swDimensions" />
+      <item itemvalue="Python.swInductance" />
       <item itemvalue="Python.swRL_time" />
     </list>
     <recent_temporary>
@@ -314,10 +285,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1264489" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15852048" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -427,17 +398,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Scripting/spice.py" />
-    <entry file="file://$PROJECT_DIR$/Scripting/swDimensions.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripting/plotData.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -456,16 +416,6 @@
           <caret line="24" column="33" selection-start-line="24" selection-start-column="33" selection-end-line="24" selection-end-column="33" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/spice.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#0#27#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -551,9 +501,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Scripting/spice.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#27#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Scripting/objects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4046">
+        <state relative-caret-position="4199">
           <caret line="259" column="30" selection-start-line="259" selection-start-column="30" selection-end-line="259" selection-end-column="30" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -563,7 +523,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Scripting/swRL_time.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-323">
+        <state relative-caret-position="17">
           <caret line="29" column="42" selection-start-line="29" selection-start-column="42" selection-end-line="29" selection-end-column="42" />
         </state>
       </provider>
