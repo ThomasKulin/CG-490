@@ -33,7 +33,7 @@ time_start = 0
 time_stop = 5e-2
 time_step = 5e-5
 # coil inductance [uH] , changes R_outer
-ind_start = 20
+ind_start = 120
 ind_stop = 220
 ind_step = 20
 # coil resistance [ohm] , changes R_outer

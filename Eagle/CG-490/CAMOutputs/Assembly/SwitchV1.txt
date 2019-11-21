@@ -1,0 +1,11 @@
+Partlist exported from C:/Users/ekultho/Documents/Personal/CG 490/Eagle/CG-490/SwitchV1.sch at 11/21/2019 4:09 PM
+
+Qty Value             Device            Package      Parts      Description                                                SPICEPREFIX
+1                     PINHD-1X3         1X03         JP1        PIN HEADER                                                            
+1   0.1 uf ceramic    C-US025-030X050   C025-030X050 C2         CAPACITOR, American symbol                                 C          
+1   1                 R-US_0207/7       0207/7       R1         RESISTOR, American symbol                                  R          
+1   1 uF film         C-US050-045X075   C050-045X075 C1         CAPACITOR, American symbol                                 C          
+2   DIODE-ZENERDO-214 DIODE-ZENERDO-214 SMA-DIODE    D1, D2     Zener Diode                                                           
+1   IRF540            IRF540            TO220        Q1         N-Channel Enhancement MOSFET (HEXFET); 100V; 28A; 0,077Ohm            
+1   MIC4420N          MIC4420N          DIL08        IC1        6A-Peak Low-Side MOSFET Driver Bipolar/CMOS/DMOS Process              
+2   WIREPADSMD5-2,5   WIREPADSMD5-2,5   5-2,5        COIL-, GND Wire PAD connect wire on PCB                                          

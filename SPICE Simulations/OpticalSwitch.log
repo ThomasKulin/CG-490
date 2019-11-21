@@ -1,0 +1,54 @@
+Circuit: * C:\Users\ekultho\Documents\Personal\CG 490\SPICE Simulations\OpticalSwitch.asc
+
+WARNING: Node NC_01 is floating.
+WARNING: Node NC_05 is floating.
+
+WARNING: Less than two connections to node NC_01.  This node is used by V:U1:I1.
+WARNING: Less than two connections to node NC_02.  This node is used by V:U1:I2.
+WARNING: Less than two connections to node NC_05.  This node is used by Q:U1:5.
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+Gmin = 0.00132923
+Gmin = 0.000142725
+Gmin = 1.5325e-005
+Gmin = 1.6455e-006
+vernier = 0.5
+vernier = 0.666667
+Gmin = 6.16112e-007
+vernier = 0.888888
+vernier = 1
+Gmin = 8.6905e-008
+Gmin = 9.33136e-009
+Gmin = 1.00195e-009
+Gmin = 1.07583e-010
+Gmin = 1.15517e-011
+Gmin = 1.24035e-012
+Gmin = 1.33182e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
+
+Changing Tseed to 1.95312e-009
+Changing Tseed to 1.95312e-011
+Changing Tseed to 1.95312e-008
+
+Date: Thu Nov 21 15:56:05 2019
+Total elapsed time: 1.619 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 4821
+traniter = 3968
+tranpoints = 1500
+accept = 1361
+rejected = 136
+matrix size = 52
+fillins = 68
+solver = Alternate
+Matrix Compiler1: 7.75 KB object code size  3.1/1.6/[1.4]
+Matrix Compiler2: 5.95 KB object code size  2.5/3.3/[1.4]
+
