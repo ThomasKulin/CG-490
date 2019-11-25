@@ -26,15 +26,15 @@ circuitResistance = 0.15  # [ohm]
 # projectile params
 pos_start = -0.5  # [cm]
 pos_end = 6
-v_start = 15  # starting velocity in [m/s]
+v_start = 0  # starting velocity in [m/s]
 # time [s]
 time_start = 0
 time_stop = 5e-2
 time_step = 5e-5
 # iron thickness in [cm]
 iron_start = 0.1
-iron_stop = 2
-iron_step = 0.2
+iron_stop = 0.5
+iron_step = 0.1
 
 
 def main():
@@ -70,14 +70,14 @@ def main():
         projectile.setDimensions(r_inner, length)
 
         outerRad, exactLayers, numLayers, wireLength, R, numTurns, L = coil.fixedInductance(r_inner, length, inductance, wireDiameter / 10, wireResistivity)
-        iron.makeBIG()
+        iron.setDimensions(r_inner, outerRad+5, length+5)
         coil.setDimensions(r_inner, outerRad, length)
         washer_thickness = wrap_thickness = var_iter[r]
-        iron.setThickness(washer_thickness, wrap_thickness, coil)
+        iron.setThickness(washer_thickness, wrap_thickness, coil, includeWrap=False)
         # set coil turns and approximate current
         on_data, off_data = coil.calculateCoilResponse( L/1e6, R)
         peakCurrent = (max(on_data[1]))
-        print("Variable Iteration:", r, "\tIron Thickness:", round(var_iter[r]), "\tLayers:", numLayers, "\t Turns:", numTurns, '\tCoil Length:', round(projectile.getLength(), 6), '[cm]', '\tCurrent:', round(peakCurrent, 6), '[A]\tIR:', round(projectile.getRadius(), 6), '[cm]', '\tOR:', round(outerRad, 6), '[cm]', '\tWire Length:', wireLength, '[m]', '\tWire Resistance:' + str(round(R,4)) + '[ohm]', '\tInductance', L, '[uH]')
+        print("Variable Iteration:", r, "\tIron Thickness:", round(var_iter[r], 4), "\tLayers:", numLayers, "\t Turns:", numTurns, '\tCoil Length:', round(projectile.getLength(), 6), '[cm]', '\tCurrent:', round(peakCurrent, 6), '[A]\tIR:', round(projectile.getRadius(), 6), '[cm]', '\tOR:', round(outerRad, 6), '[cm]', '\tWire Length:', wireLength, '[m]', '\tWire Resistance:' + str(round(R,4)) + '[ohm]', '\tInductance', L, '[uH]')
         worksheet = initializeSheet(workbook, str(var_iter[r]*10)+" mm")
         coilOn = True
         offTime = 0
@@ -118,6 +118,7 @@ def main():
             if not coilOn and I[r][i] < 1e-3:
                 break;
             projectile.moveZ(v[r][i]*time_step * 100)  # move projectile forward by pos_step cm
+        projectile.setPosition(coil.getTriggerPosition())  # set start pos
 
     femm.closefemm()
     workbook.close()

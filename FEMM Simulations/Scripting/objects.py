@@ -315,11 +315,12 @@ class Projectile:
         self.nodes[2][0] += rIter
 
 class Iron:
-    def __init__(self, nodes, groups=[20, 21, 22, 23], propGroup=25):
+    def __init__(self, nodes, groups=[20, 21, 22, 23], propGroup=25, propNode=[0.4,1.95]):
         #            N: 10 (r, z), N 11,     N 12,        N 13
         self.nodes = nodes
         self.groups = groups
         self.propGroup = propGroup
+        self.propNode = propNode
 
     def getLength(self):
         return self.nodes[0][1] - self.nodes[3][1]
@@ -330,9 +331,13 @@ class Iron:
     def getOR(self):
         return self.nodes[1][1]
 
-    def setThickness(self, washerThickness, wrapThickness, coil):
-        rOuter = wrapThickness + coil.nodes[1][0]
+    def setThickness(self, washerThickness, wrapThickness, coil, includeWrap=True):
         len = wrapThickness + (coil.nodes[1][1] - coil.nodes[2][1])
+        if includeWrap:
+            rOuter = wrapThickness + coil.nodes[1][0]
+        else:
+            rOuter = coil.nodes[1][0]
+
         femm.mi_selectgroup(self.groups[1])
         femm.mi_movetranslate(rOuter - self.nodes[1][0], coil.nodes[1][1]-self.nodes[1][1] + wrapThickness)
         self.nodes[1][0] = rOuter
@@ -341,8 +346,6 @@ class Iron:
         femm.mi_movetranslate(rOuter - self.nodes[2][0], coil.nodes[2][1]-self.nodes[2][1] - wrapThickness)
         self.nodes[2][0] = rOuter
         self.nodes[2][1] = coil.nodes[2][1] - wrapThickness
-        femm.mi_selectgroup(self.propGroup)  # block label
-        femm.mi_movetranslate(coil.nodes[3][0] - self.nodes[3][0], 0)
         femm.mi_selectgroup(self.groups[0])
         femm.mi_movetranslate(coil.nodes[0][0] - self.nodes[0][0], coil.nodes[0][1]-self.nodes[0][1] + wrapThickness)
         self.nodes[0][0] = coil.nodes[0][0]
@@ -351,6 +354,47 @@ class Iron:
         femm.mi_movetranslate(coil.nodes[3][0] - self.nodes[3][0], coil.nodes[3][1]-self.nodes[3][1] - wrapThickness)
         self.nodes[3][0] = coil.nodes[3][0]
         self.nodes[3][1] = coil.nodes[3][1] - wrapThickness
+        femm.mi_selectgroup(self.propGroup)  # block label
+        femm.mi_movetranslate((self.nodes[2][0] + self.nodes[3][0]) / 2 - self.propNode[0], (coil.nodes[3][1] + self.nodes[3][1]) / 2 - self.propNode[1])
+        self.propNode = [(self.nodes[2][0] + self.nodes[3][0]) / 2, (coil.nodes[3][1] + self.nodes[3][1]) / 2]
+
+    def setDimensions(self, rInner, rOuter, len):
+        if self.nodes[3][0] <= rInner:
+            femm.mi_selectgroup(self.groups[1])
+            femm.mi_movetranslate(rOuter - self.nodes[1][0], len - (self.nodes[1][1] - self.nodes[2][1]))
+            self.nodes[1][0] = rOuter
+            self.nodes[1][1] = len + self.nodes[2][1]
+            femm.mi_selectgroup(self.groups[2])
+            femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
+            self.nodes[2][0] = rOuter
+            femm.mi_selectgroup(self.groups[0])
+            femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
+            self.nodes[0][0] = rInner
+            self.nodes[0][1] = len + self.nodes[3][1]
+            femm.mi_selectgroup(self.groups[3])
+            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+            self.nodes[3][0] = rInner
+            femm.mi_selectgroup(self.propGroup)  # block label
+            femm.mi_movetranslate((self.nodes[2][0] + self.nodes[3][0]) / 2 - self.propNode[0], 0)
+            self.propNode[0] = (self.nodes[2][0] + self.nodes[3][0]) / 2
+        else:
+            femm.mi_selectgroup(self.groups[0])
+            femm.mi_movetranslate(rInner - self.nodes[0][0], len - (self.nodes[0][1] - self.nodes[3][1]))
+            self.nodes[0][0] = rInner
+            self.nodes[0][1] = len + self.nodes[3][1]
+            femm.mi_selectgroup(self.groups[3])
+            femm.mi_movetranslate(rInner - self.nodes[3][0], 0)
+            self.nodes[3][0] = rInner
+            femm.mi_selectgroup(self.groups[1])
+            femm.mi_movetranslate(rOuter - self.nodes[1][0], len - (self.nodes[1][1] - self.nodes[2][1]))
+            self.nodes[1][0] = rOuter
+            self.nodes[1][1] = len + self.nodes[2][1]
+            femm.mi_selectgroup(self.groups[2])
+            femm.mi_movetranslate(rOuter - self.nodes[2][0], 0)
+            self.nodes[2][0] = rOuter
+            femm.mi_selectgroup(self.propGroup)  # block label
+            femm.mi_movetranslate((self.nodes[2][0] + self.nodes[3][0]) / 2 - self.propNode[0], 0)
+            self.propNode[0] = (self.nodes[2][0] + self.nodes[3][0]) / 2
 
     def makeBIG(self):
         femm.mi_selectgroup(self.groups[1])
@@ -362,7 +406,8 @@ class Iron:
         self.nodes[2][0] = 9
         self.nodes[2][1] = 0.5
         femm.mi_selectgroup(self.propGroup)  # block label
-        femm.mi_movetranslate(0.1 - self.nodes[3][0], 0)
+        femm.mi_movetranslate(0.1 - self.propNode[0], 0)
+        self.propNode[0] = 0.1
         femm.mi_selectgroup(self.groups[0])
         femm.mi_movetranslate(0.1 - self.nodes[0][0], 15 - self.nodes[0][1])
         self.nodes[0][0] = 0.1
