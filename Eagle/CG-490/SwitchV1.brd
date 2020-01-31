@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="50" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
+<grid distance="25" unitdist="mil" unit="mil" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="yes" active="yes"/>
 <layer number="2" name="Route2" color="16" fill="1" visible="no" active="no"/>
@@ -36,7 +36,7 @@
 <layer number="26" name="bNames" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="27" name="tValues" color="7" fill="1" visible="yes" active="yes"/>
 <layer number="28" name="bValues" color="7" fill="1" visible="yes" active="yes"/>
-<layer number="29" name="tStop" color="7" fill="3" visible="no" active="yes"/>
+<layer number="29" name="tStop" color="7" fill="3" visible="yes" active="yes"/>
 <layer number="30" name="bStop" color="7" fill="6" visible="no" active="yes"/>
 <layer number="31" name="tCream" color="7" fill="4" visible="no" active="yes"/>
 <layer number="32" name="bCream" color="7" fill="5" visible="no" active="yes"/>
@@ -168,6 +168,7 @@
 <text x="8.89" y="35.56" size="0.8128" layer="51">+18 V</text>
 <text x="8.89" y="33.02" size="0.8128" layer="51">SIG</text>
 <text x="8.89" y="30.48" size="0.8128" layer="51">GND</text>
+<rectangle x1="24.13" y1="31.75" x2="34.29" y2="46.99" layer="29"/>
 </plain>
 <libraries>
 <library name="rcl" urn="urn:adsk.eagle:library:334">
@@ -1782,6 +1783,43 @@ design rules under a new name.</description>
 <vertex x="40.64" y="20.32"/>
 <vertex x="5.08" y="20.32"/>
 </polygon>
+<polygon width="0.1524" layer="16" thermals="no">
+<vertex x="5.08" y="48.26"/>
+<vertex x="22.86" y="48.26"/>
+<vertex x="22.86" y="30.48"/>
+<vertex x="35.56" y="30.48"/>
+<vertex x="35.56" y="33.02"/>
+<vertex x="40.64" y="33.02"/>
+<vertex x="40.64" y="20.32"/>
+<vertex x="6.35" y="20.32"/>
+<vertex x="5.08" y="20.32"/>
+</polygon>
+<via x="34.29" y="24.13" extent="1-16" drill="0.35"/>
+<via x="34.29" y="22.86" extent="1-16" drill="0.35"/>
+<via x="35.56" y="24.13" extent="1-16" drill="0.35"/>
+<via x="35.56" y="22.86" extent="1-16" drill="0.35"/>
+<via x="36.83" y="24.13" extent="1-16" drill="0.35"/>
+<via x="36.83" y="22.86" extent="1-16" drill="0.35"/>
+<via x="38.1" y="24.13" extent="1-16" drill="0.35"/>
+<via x="38.1" y="22.86" extent="1-16" drill="0.35"/>
+<via x="39.37" y="24.13" extent="1-16" drill="0.35"/>
+<via x="39.37" y="22.86" extent="1-16" drill="0.35"/>
+<via x="39.37" y="21.59" extent="1-16" drill="0.35"/>
+<via x="38.1" y="21.59" extent="1-16" drill="0.35"/>
+<via x="36.83" y="21.59" extent="1-16" drill="0.35"/>
+<via x="35.56" y="21.59" extent="1-16" drill="0.35"/>
+<via x="34.29" y="21.59" extent="1-16" drill="0.35"/>
+<via x="32.385" y="26.67" extent="1-16" drill="0.35"/>
+<via x="31.115" y="26.67" extent="1-16" drill="0.35"/>
+<via x="31.115" y="24.13" extent="1-16" drill="0.35"/>
+<via x="32.385" y="24.13" extent="1-16" drill="0.35"/>
+<via x="33.02" y="25.4" extent="1-16" drill="0.35"/>
+<via x="31.75" y="27.305" extent="1-16" drill="0.35"/>
+<via x="31.75" y="23.495" extent="1-16" drill="0.35"/>
+<via x="37.465" y="25.4" extent="1-16" drill="0.35"/>
+<via x="38.735" y="25.4" extent="1-16" drill="0.35"/>
+<via x="38.735" y="26.67" extent="1-16" drill="0.35"/>
+<via x="37.465" y="26.67" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="N$1">
 <contactref element="IC1" pad="7"/>
@@ -1814,6 +1852,43 @@ design rules under a new name.</description>
 <vertex x="24.13" y="31.75"/>
 </polygon>
 <wire x1="29.21" y1="25.4" x2="29.21" y2="33.02" width="1.27" layer="1"/>
+<polygon width="0.1524" layer="16">
+<vertex x="24.13" y="31.75"/>
+<vertex x="24.13" y="48.26"/>
+<vertex x="40.64" y="48.26"/>
+<vertex x="40.64" y="34.29"/>
+<vertex x="34.29" y="34.29"/>
+<vertex x="34.29" y="31.75"/>
+</polygon>
+<via x="39.37" y="44.45" extent="1-16" drill="0.35"/>
+<via x="38.1" y="44.45" extent="1-16" drill="0.35"/>
+<via x="36.83" y="44.45" extent="1-16" drill="0.35"/>
+<via x="37.465" y="43.18" extent="1-16" drill="0.35"/>
+<via x="38.735" y="43.18" extent="1-16" drill="0.35"/>
+<via x="39.37" y="41.91" extent="1-16" drill="0.35"/>
+<via x="38.1" y="41.91" extent="1-16" drill="0.35"/>
+<via x="36.83" y="41.91" extent="1-16" drill="0.35"/>
+<via x="37.465" y="40.64" extent="1-16" drill="0.35"/>
+<via x="38.735" y="40.64" extent="1-16" drill="0.35"/>
+<via x="39.37" y="39.37" extent="1-16" drill="0.35"/>
+<via x="38.1" y="39.37" extent="1-16" drill="0.35"/>
+<via x="36.83" y="39.37" extent="1-16" drill="0.35"/>
+<via x="25.4" y="38.1" extent="1-16" drill="0.35"/>
+<via x="27.305" y="38.1" extent="1-16" drill="0.35"/>
+<via x="29.21" y="38.1" extent="1-16" drill="0.35"/>
+<via x="31.115" y="38.1" extent="1-16" drill="0.35"/>
+<via x="33.02" y="38.1" extent="1-16" drill="0.35"/>
+<via x="25.4" y="36.195" extent="1-16" drill="0.35"/>
+<via x="27.305" y="36.195" extent="1-16" drill="0.35"/>
+<via x="29.21" y="36.195" extent="1-16" drill="0.35"/>
+<via x="31.115" y="36.195" extent="1-16" drill="0.35"/>
+<via x="33.02" y="36.195" extent="1-16" drill="0.35"/>
+<via x="33.02" y="40.005" extent="1-16" drill="0.35"/>
+<via x="25.4" y="40.005" extent="1-16" drill="0.35"/>
+<via x="37.465" y="37.465" extent="1-16" drill="0.35"/>
+<via x="38.735" y="37.465" extent="1-16" drill="0.35"/>
+<via x="38.735" y="36.195" extent="1-16" drill="0.35"/>
+<via x="37.465" y="36.195" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="N$4">
 <contactref element="JP1" pad="2"/>

@@ -1,4 +1,4 @@
-Partlist exported from C:/Users/ekultho/Documents/Personal/CG 490/Eagle/CG-490/SwitchV1.sch at 11/21/2019 4:09 PM
+Partlist exported from C:/Users/ekultho/Documents/Personal/CG 490/Eagle/CG-490/SwitchV1.sch at 1/29/2020 10:12 AM
 
 Qty Value             Device            Package      Parts      Description                                                SPICEPREFIX
 1                     PINHD-1X3         1X03         JP1        PIN HEADER                                                            

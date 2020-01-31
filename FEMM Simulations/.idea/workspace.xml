@@ -1,7 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f6208e2-d4b1-4aa9-8bc6-de37d325c817" name="Default Changelist" comment="Started writing the simulation writeup report" />
+    <list default="true" id="2f6208e2-d4b1-4aa9-8bc6-de37d325c817" name="Default Changelist" comment="Started writing the simulation writeup report">
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/Assembly/SwitchV1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/Assembly/SwitchV1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/DrillFiles/drill_1_16.xln" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/DrillFiles/drill_1_16.xln" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/GerberFiles.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/copper_bottom.gbr" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/copper_bottom.gbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/copper_top.gbr" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/copper_top.gbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/gerber_job.gbrjob" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/gerber_job.gbrjob" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/soldermask_bottom.gbr" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/soldermask_bottom.gbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/soldermask_top.gbr" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/soldermask_top.gbr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#3" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#4" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#5" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#6" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#7" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.brd" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.brd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.net" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.net" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.net" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.net" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripting/swInductance.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swInductance.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripting/swIron_Time.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swIron_Time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripting/swRL_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swRL_time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp.ans" beforeDir="false" afterPath="$PROJECT_DIR$/temp.ans" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp.fem" beforeDir="false" afterPath="$PROJECT_DIR$/temp.fem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.op.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.raw" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,7 +47,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripting/objects.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
+            <state relative-caret-position="5525">
               <caret line="337" column="13" selection-start-line="337" selection-start-column="13" selection-end-line="337" selection-end-column="13" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
@@ -22,14 +56,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripting/swIron_Time.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="102" selection-start-line="102" selection-end-line="102" />
+            <state relative-caret-position="221">
+              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Scripting/swRL_time.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="103">
+              <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -57,21 +100,21 @@
         <option value="$PROJECT_DIR$/Scripting/swResistanceTime.py" />
         <option value="$PROJECT_DIR$/Scripting/swDimensions.py" />
         <option value="$PROJECT_DIR$/Scripting/coilgun_timeSweep.py" />
-        <option value="$PROJECT_DIR$/Scripting/swInductance.py" />
         <option value="$PROJECT_DIR$/Scripting/swIronThickness.py" />
         <option value="$PROJECT_DIR$/Scripting/swProjectileLength.py" />
         <option value="$PROJECT_DIR$/Scripting/swWallThickness.py" />
-        <option value="$PROJECT_DIR$/Scripting/swRL_time.py" />
         <option value="$PROJECT_DIR$/Scripting/objects.py" />
         <option value="$PROJECT_DIR$/Scripting/swIron_Time.py" />
+        <option value="$PROJECT_DIR$/Scripting/swInductance.py" />
+        <option value="$PROJECT_DIR$/Scripting/swRL_time.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-9" />
-    <option name="y" value="-9" />
-    <option name="width" value="1938" />
-    <option name="height" value="1098" />
+  <component name="ProjectFrameBounds" extendedState="7">
+    <option name="x" value="-1928" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectId" id="1SZwb55gyjyPvnC54Kl6BQuQZsY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -125,7 +168,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.swIron_Time">
+  <component name="RunManager" selected="Python.swRL_time">
     <configuration name="plotData" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FEMM Simulations" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -169,7 +212,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="swDimensions" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="swInductance" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FEMM Simulations" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -177,12 +220,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripting" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\ekultho\Documents\Personal\CG 490\FEMM Simulations\Scripting\swDimensions.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripting/swInductance.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -236,17 +278,17 @@
     <list>
       <item itemvalue="Python.plotData" />
       <item itemvalue="Python.spice" />
-      <item itemvalue="Python.swDimensions" />
-      <item itemvalue="Python.swRL_time" />
       <item itemvalue="Python.swIron_Time" />
+      <item itemvalue="Python.swRL_time" />
+      <item itemvalue="Python.swInductance" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.swIron_Time" />
         <item itemvalue="Python.swRL_time" />
+        <item itemvalue="Python.swInductance" />
+        <item itemvalue="Python.swIron_Time" />
         <item itemvalue="Python.spice" />
         <item itemvalue="Python.plotData" />
-        <item itemvalue="Python.swDimensions" />
       </list>
     </recent_temporary>
   </component>
@@ -274,16 +316,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="7" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15852048" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1264489" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49894625" visible="true" weight="0.3960396" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3493635" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49894625" visible="true" weight="0.49837488" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.26760563" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="Version Control" order="6" sideWeight="0.49315068" weight="0.24593717" />
@@ -337,25 +378,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Started writing the simulation writeup report" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Scripting/swRL_time.py</url>
-          <line>113</line>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Scripting/swRL_time.py</url>
-          <line>87</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Scripting/swIron_Time.py</url>
-          <line>120</line>
-          <option name="timeStamp" value="12" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="time" />
@@ -368,6 +390,13 @@
     <SUITE FILE_PATH="coverage/FEMM_Simulations$swInductance.coverage" NAME="swInductance Coverage Results" MODIFIED="1571792332569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="debuggerHistoryManager">
+    <expressions id="evaluateCodeFragment">
+      <expression>
+        <expression-string>coil.fixedInductance(projectile.getRadius(), projectile.getLength(), 200, wireDiameter / 10, wireResistivity)</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+    </expressions>
     <expressions id="evaluateExpression">
       <expression>
         <expression-string>(coil.nodes[3][1] + self.nodes[3][1])/2</expression-string>
@@ -450,16 +479,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/swInductance.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="37" column="26" selection-start-line="37" selection-start-column="26" selection-end-line="37" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripting/swIronThickness.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -520,16 +539,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/swRL_time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="9">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripting/objects.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
+        <state relative-caret-position="5525">
           <caret line="337" column="13" selection-start-line="337" selection-start-column="13" selection-end-line="337" selection-end-column="13" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
@@ -539,11 +551,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Scripting/swIron_Time.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="102" selection-start-line="102" selection-end-line="102" />
+        <state relative-caret-position="221">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/femm/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="331" selection-start-line="331" selection-end-line="331" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripting/swInductance.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-574">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripting/swRL_time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="103">
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
         </state>
       </provider>
     </entry>

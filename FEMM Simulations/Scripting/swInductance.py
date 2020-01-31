@@ -11,9 +11,9 @@ from Scripting.objects import Projectile
 filename = "7mmCoil_192T_156A_swDimensions"
 dataFileName = "32mm_rad_vs_ind"
 # coil params
-ind_start = 10  # coil inductance [uH]
-ind_stop = 100
-ind_step = 10
+ind_start = 100  # coil inductance [uH]
+ind_stop = 300
+ind_step = 50
 wireDiameter = 1.06  # coil wire diameter [mm]
 wireResistivity = 20.9 / 1000  # coil wire resistance per length [ohm/m]
 # circuit params
@@ -24,8 +24,8 @@ pos_start = -2
 pos_stop = 8
 pos_step = 1
 # projectile radius [cm] (also changes the inner radius of the coil)
-rad_start = 0.45
-rad_stop = 0.45
+rad_start = 0.48
+rad_stop = 0.48
 rad_step = 0.16
 length = 3.2  # projectile length [cm]
 
@@ -59,8 +59,8 @@ def main():
         for r in range(len(rad_iter)):
             # set projectile and coil geometry
             projectile.setDimensions(rad_iter[r], length)
-            outerRad, exactLayers, numLayers, wireLength, wireResistance, numTurns, L = coil.fixedInductance(projectile.getRadius(), projectile.getLength(), ind_iter[l], wireDiameter / 10, wireResistivity)
-            coil.setDimensions(projectile.getRadius(), outerRad, projectile.getLength())
+            outerRad, exactLayers, numLayers, wireLength, wireResistance, numTurns, L = coil.fixedInductance(projectile.getRadius()+0.15, projectile.getLength(), ind_iter[l], wireDiameter / 10, wireResistivity)
+            coil.setDimensions(projectile.getRadius()+0.15, outerRad, projectile.getLength())
             # set coil turns and approximate current
             coilCurrent = 50 / (wireResistance + circuitResistance)
             femm.mi_setcurrent('Coil', coilCurrent)

@@ -20,13 +20,13 @@ length = 4  # coil length [cm]
 r_inner = 0.45  # coil inner radius [cm]
 wireDiameter = 1.06  # coil wire diameter [mm]
 wireResistivity = 20.9 / 1000  # coil wire resistance per length [ohm/m]
-inductance = 200
+inductance = 100
 # circuit params
 circuitResistance = 0.15  # [ohm]
 # projectile params
 pos_start = -0.5  # [cm]
 pos_end = 6
-v_start = 0  # starting velocity in [m/s]
+v_start = 15  # starting velocity in [m/s]
 # time [s]
 time_start = 0
 time_stop = 5e-2

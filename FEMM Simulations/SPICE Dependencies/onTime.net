@@ -10,8 +10,8 @@ V1 N002 0 20
 .lib STP310N10F7_V3.lib
 .ic I(L1) = I_COIL
 .param I_COIL=0
-.param L_COIL=0.00019999999999999996
-.param R_COIL=0.19879290417940434
+.param L_COIL=0.0003
+.param R_COIL=0.2536952916854035
 .lib SOAtherm-PCB.lib
 .backanno
 .end

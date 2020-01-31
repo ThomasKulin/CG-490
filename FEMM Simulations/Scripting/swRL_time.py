@@ -19,7 +19,8 @@ testType = 'inductance'
 dataFileName = "swInductanceVsTime" if testType == 'inductance' else 'swResistanceVsTime'
 # coil params
 length = 4  # coil length [cm]
-r_inner = 0.45  # coil inner radius [cm]
+r_inner = 0.48  # coil inner radius [cm]
+wallThickness = 0.16
 wireDiameter = 1.06  # coil wire diameter [mm]
 wireResistivity = 20.9 / 1000  # coil wire resistance per length [ohm/m]
 # circuit params
@@ -27,15 +28,15 @@ circuitResistance = 0.15  # [ohm]
 # projectile params
 pos_start = -0.5  # [cm]
 pos_end = 6
-v_start = 15  # starting velocity in [m/s]
+v_start = 0  # starting velocity in [m/s]
 # time [s]
 time_start = 0
 time_stop = 5e-2
 time_step = 5e-5
 # coil inductance [uH] , changes R_outer
-ind_start = 120
-ind_stop = 220
-ind_step = 20
+ind_start = 300
+ind_stop = 300
+ind_step = 50
 # coil resistance [ohm] , changes R_outer
 res_start = 0.01
 res_stop = 0.1
@@ -79,13 +80,13 @@ def main():
         projectile.setDimensions(r_inner, length)
 
         if testType == 'resistance':
-            outerRad, exactLayers, numLayers, R, wireLength, numTurns, L = coil.fixedResistance(r_inner, length, var_iter[r], wireDiameter / 10, wireResistivity)
+            outerRad, exactLayers, numLayers, R, wireLength, numTurns, L = coil.fixedResistance(r_inner+wallThickness, length, var_iter[r], wireDiameter / 10, wireResistivity)
             worksheet = initializeSheet(workbook, 'R' + str(var_iter[r]))
         else:
-            outerRad, exactLayers, numLayers, wireLength, R, numTurns, L = coil.fixedInductance(r_inner, length, var_iter[r], wireDiameter / 10, wireResistivity)
+            outerRad, exactLayers, numLayers, wireLength, R, numTurns, L = coil.fixedInductance(r_inner+wallThickness, length, var_iter[r], wireDiameter / 10, wireResistivity)
             worksheet = initializeSheet(workbook, 'L' + str(var_iter[r]))
 
-        coil.setDimensions(r_inner, outerRad, length)
+        coil.setDimensions(r_inner+wallThickness, outerRad, length)
         # set coil turns and approximate current
         on_data, off_data = coil.calculateCoilResponse( L/1e6, R)
         peakCurrent = (max(on_data[1]))

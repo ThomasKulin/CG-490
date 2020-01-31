@@ -1790,7 +1790,8 @@ design rules under a new name.</description>
 <signal name="N$2">
 <contactref element="R1" pad="2"/>
 <contactref element="Q1" pad="1"/>
-<wire x1="25.4" y1="22.86" x2="26.67" y2="25.4" width="0" layer="19" extent="1-1"/>
+<wire x1="25.4" y1="22.86" x2="26.67" y2="24.13" width="0.6096" layer="1"/>
+<wire x1="26.67" y1="24.13" x2="26.67" y2="25.4" width="0.6096" layer="1"/>
 </signal>
 <signal name="N$3">
 <contactref element="D2" pad="C"/>
