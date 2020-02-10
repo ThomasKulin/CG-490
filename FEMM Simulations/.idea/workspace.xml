@@ -2,39 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f6208e2-d4b1-4aa9-8bc6-de37d325c817" name="Default Changelist" comment="Started writing the simulation writeup report">
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/Assembly/SwitchV1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/Assembly/SwitchV1.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/DrillFiles/drill_1_16.xln" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/DrillFiles/drill_1_16.xln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/GerberFiles.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/copper_bottom.gbr" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/copper_bottom.gbr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/copper_top.gbr" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/copper_top.gbr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/gerber_job.gbrjob" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/gerber_job.gbrjob" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/soldermask_bottom.gbr" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/soldermask_bottom.gbr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/soldermask_top.gbr" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/CAMOutputs/GerberFiles/soldermask_top.gbr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#3" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#4" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#4" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#5" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#6" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#6" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#7" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.b#7" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.brd" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/SwitchV1.brd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.net" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.net" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.net" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.net" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripting/swInductance.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swInductance.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripting/swIron_Time.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swIron_Time.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Scripting/swRL_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swRL_time.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.ans" beforeDir="false" afterPath="$PROJECT_DIR$/temp.ans" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.fem" beforeDir="false" afterPath="$PROJECT_DIR$/temp.fem" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.op.raw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/PowerSwitch V1.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Report/~$0 Preliminary Report.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Report/~WRL0005.tmp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.op.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.raw" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,7 +32,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Scripting/swIron_Time.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
+            <state relative-caret-position="170">
               <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
@@ -110,11 +83,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-1928" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-10" />
+    <option name="y" value="-10" />
+    <option name="width" value="1939" />
+    <option name="height" value="1049" />
   </component>
   <component name="ProjectId" id="1SZwb55gyjyPvnC54Kl6BQuQZsY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -278,9 +251,9 @@
     <list>
       <item itemvalue="Python.plotData" />
       <item itemvalue="Python.spice" />
+      <item itemvalue="Python.swInductance" />
       <item itemvalue="Python.swIron_Time" />
       <item itemvalue="Python.swRL_time" />
-      <item itemvalue="Python.swInductance" />
     </list>
     <recent_temporary>
       <list>
@@ -316,14 +289,15 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1928" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1264489" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15852048" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49894625" visible="true" weight="0.49837488" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49894625" weight="0.6506365" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.26760563" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -539,26 +513,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/objects.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5525">
-          <caret line="337" column="13" selection-start-line="337" selection-start-column="13" selection-end-line="337" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Scripting/swIron_Time.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/femm/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -577,6 +531,26 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-574">
           <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripting/objects.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5525">
+          <caret line="337" column="13" selection-start-line="337" selection-start-column="13" selection-end-line="337" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Scripting/swIron_Time.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
