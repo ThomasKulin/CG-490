@@ -1,7 +1,7 @@
 {
     "Header": {
         "Comment": "All values are metric (mm)",
-        "CreationDate": "2020-01-29T15:12:30Z",
+        "CreationDate": "2020-03-11T19:05:15Z",
         "GenerationSoftware": {
             "Application": "EAGLE",
             "Vendor": "Autodesk",
@@ -13,12 +13,12 @@
         "BoardThickness": 1.57,
         "LayerNumber": 2,
         "Name": {
-            "ProjectId": "SwitchV1"
+            "ProjectId": "PowerSwitchV1"
         },
         "Owner": "Thomas Kulin <thomask_2002-main@yahoo.ca>",
         "Size": {
-            "X": 36.81,
-            "Y": 28.88
+            "X": 30.15,
+            "Y": 43.805
         }
     }
 }
