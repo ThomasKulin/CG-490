@@ -2,20 +2,20 @@ Circuit: * D:\Users\Thomas\Documents\Projects\CG-490\FEMM Simulations\SPICE Depe
 
 Direct Newton iteration for .op point succeeded.
 
-Date: Thu Feb 27 17:49:09 2020
-Total elapsed time: 2.496 seconds.
+Date: Thu Mar 12 19:36:20 2020
+Total elapsed time: 1.470 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 536099
-traniter = 536075
-tranpoints = 258971
-accept = 185293
-rejected = 73678
+totiter = 483261
+traniter = 483238
+tranpoints = 240403
+accept = 170859
+rejected = 69544
 matrix size = 5
 fillins = 0
 solver = Alternate
-Matrix Compiler1: 370 bytes object code size  0.1/0.2/[0.0]
-Matrix Compiler2: 419 bytes object code size  0.1/0.1/[0.0]
+Matrix Compiler1: 370 bytes object code size  0.2/0.1/[0.1]
+Matrix Compiler2: 419 bytes object code size  0.1/0.2/[0.1]
 

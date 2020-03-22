@@ -1,0 +1,13 @@
+* D:\Users\Thomas\Documents\Projects\CG-490\FEMM Simulations\SPICE Dependencies\offTime.asc
+V2 N001 0 50 Rser=.12
+L1 N001 Vo {L_COIL} Rser={R_COIL} Cpar=1e-9
+XD1 N002 Vo SMDJ24A
+XD2 0 N002 SMDJ24A
+.tran 0 0.04 0 0.00001
+.lib SMDJXXXA.lib
+.ic I(L1) = I_COIL
+.param I_COIL=138.84075927734375
+.param L_COIL=0.00025
+.param R_COIL=0.23719747261611812
+.backanno
+.end

@@ -2,14 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f6208e2-d4b1-4aa9-8bc6-de37d325c817" name="Default Changelist" comment="Started writing the simulation writeup report">
-      <change beforePath="$PROJECT_DIR$/.idea/FEMM Simulations.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FEMM Simulations.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.edge" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.ele" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.node" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.pbc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/temp.poly" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Scripting/swRL_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swRL_time.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp.ans" beforeDir="false" afterPath="$PROJECT_DIR$/temp.ans" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp.fem" beforeDir="false" afterPath="$PROJECT_DIR$/temp.fem" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -237,6 +241,15 @@
     <option name="LAST_COMMIT_MESSAGE" value="Started writing the simulation writeup report" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Scripting/swRL_time.py</url>
+          <line>112</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
         <watch expression="time" />
@@ -247,51 +260,5 @@
     <SUITE FILE_PATH="coverage/FEMM_Simulations$swDimensions.coverage" NAME="swDimensions Coverage Results" MODIFIED="1572812672721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FEMM_Simulations$plotData.coverage" NAME="plotData Coverage Results" MODIFIED="1572828709775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FEMM_Simulations$swInductance.coverage" NAME="swInductance Coverage Results" MODIFIED="1571792332569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="debuggerHistoryManager">
-    <expressions id="evaluateCodeFragment">
-      <expression>
-        <expression-string>coil.fixedInductance(projectile.getRadius(), projectile.getLength(), 200, wireDiameter / 10, wireResistivity)</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
-      </expression>
-    </expressions>
-    <expressions id="evaluateExpression">
-      <expression>
-        <expression-string>(coil.nodes[3][1] + self.nodes[3][1])/2</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>(self.nodes[2][0] + self.nodes[3][0])/2</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>z[r][i - 1]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>v[r][i]*0.001</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>v[r][i]</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>projectile.getMass()</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-      <expression>
-        <expression-string>min(self.data.getTime(), key=lambda x: abs(x - time))</expression-string>
-        <language-id>Python</language-id>
-        <evaluation-mode>EXPRESSION</evaluation-mode>
-      </expression>
-    </expressions>
   </component>
 </project>

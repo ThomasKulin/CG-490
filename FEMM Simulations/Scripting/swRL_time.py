@@ -34,8 +34,8 @@ time_start = 0
 time_stop = 5e-2
 time_step = 5e-5
 # coil inductance [uH] , changes R_outer
-ind_start = 300
-ind_stop = 300
+ind_start = 250
+ind_stop = 400
 ind_step = 50
 # coil resistance [ohm] , changes R_outer
 res_start = 0.01

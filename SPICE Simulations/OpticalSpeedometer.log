@@ -1,0 +1,21 @@
+Circuit: * D:\Users\Thomas\Documents\Projects\CG-490\SPICE Simulations\OpticalSpeedometer.asc
+
+Direct Newton iteration for .op point succeeded.
+
+Date: Fri Mar 20 22:23:06 2020
+Total elapsed time: 0.124 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 4136
+traniter = 4087
+tranpoints = 1513
+accept = 1392
+rejected = 121
+matrix size = 31
+fillins = 46
+solver = Alternate
+Matrix Compiler1: 4.36 KB object code size  1.1/0.8/[0.5]
+Matrix Compiler2: off  [0.4]/0.7/0.5
+
