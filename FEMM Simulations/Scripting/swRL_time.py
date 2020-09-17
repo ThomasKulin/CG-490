@@ -8,9 +8,9 @@ import matplotlib.pyplot as plt
 from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
 
-from Scripting.objects import Coil
-from Scripting.objects import Projectile
-from Scripting.objects import LTSpice
+from objects import Coil
+from objects import Projectile
+from objects import LTSpice
 
 # TEST PARAMS --- Units in cm
 filename = "7mmCoil_192T_156A_swDimensions"
@@ -28,15 +28,15 @@ circuitResistance = 0.15  # [ohm]
 # projectile params
 pos_start = -0.5  # [cm]
 pos_end = 6
-v_start = 0  # starting velocity in [m/s]
+v_start = 28,  # starting velocity in [m/s]
 # time [s]
 time_start = 0
 time_stop = 5e-2
 time_step = 5e-5
 # coil inductance [uH] , changes R_outer
-ind_start = 250
-ind_stop = 400
-ind_step = 50
+ind_start = 30
+ind_stop = 120
+ind_step = 10
 # coil resistance [ohm] , changes R_outer
 res_start = 0.01
 res_stop = 0.1
