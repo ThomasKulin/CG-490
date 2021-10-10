@@ -2,20 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f6208e2-d4b1-4aa9-8bc6-de37d325c817" name="Default Changelist" comment="Started writing the simulation writeup report">
+      <change afterPath="$PROJECT_DIR$/Scripting/injectorRL_time.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Scripting/readDataToFile.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CAD/components/CAPPRD254W65D500H700B.step" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CAD/components/CL23B_72_100_50_V.stp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CAD/components/TO127P1500X470-8N.step" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Code/TEST/Pulse Generator/PulseGen/PulseGen.ino" beforeDir="false" afterPath="$PROJECT_DIR$/../Code/TEST/Pulse Generator/PulseGen/PulseGen.ino" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/PowerSwitchV1.b#7" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/PowerSwitchV1.b#7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Eagle/CG-490/eagle.epf" beforeDir="false" afterPath="$PROJECT_DIR$/../Eagle/CG-490/eagle.epf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Data/TimeRLSweep 2020_01_30 12_34 (first stage L update)/swInductanceVsTime_stage1updated.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/Data/TimeRLSweep 2020_01_30 12_34 (first stage L update)/swInductanceVsTime_stage1updated.xlsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.asc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.net" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.op.raw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/offTime.raw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.asc" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.net" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.op.raw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" beforeDir="false" afterPath="$PROJECT_DIR$/SPICE Dependencies/onTime.raw" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Scripting/swRL_time.py" beforeDir="false" afterPath="$PROJECT_DIR$/Scripting/swRL_time.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/temp.ans" beforeDir="false" afterPath="$PROJECT_DIR$/temp.ans" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/temp.fem" beforeDir="false" afterPath="$PROJECT_DIR$/temp.fem" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.log" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.op.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.op.raw" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.raw" beforeDir="false" afterPath="$PROJECT_DIR$/../SPICE Simulations/OpticalSwitch.raw" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,32 +48,30 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="Python" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Scripting" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Thomas\Documents\Projects\CG-490\FEMM Simulations\Scripting" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ekultho\Documents\Personal\CG 490\FEMM Simulations\Scripting" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Python.swRL_time">
-    <configuration name="plotData" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python.injectorRL_time">
+    <configuration name="injectorRL_time" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="FEMM Simulations" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -68,12 +79,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripting" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\ekultho\Documents\Personal\CG 490\FEMM Simulations\Scripting\plotData.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripting/injectorRL_time.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -82,7 +92,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="spice" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="readDataToFile" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="FEMM Simulations" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -90,11 +100,32 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripting" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="C:\Users\ekultho\Documents\Personal\CG 490\FEMM Simulations\Scripting\spice.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripting/readDataToFile.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="scratch_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="FEMM Simulations" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$APPLICATION_CONFIG_DIR$/scratches" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$APPLICATION_CONFIG_DIR$/scratches/scratch_2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -116,27 +147,6 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripting/swInductance.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="swIron_Time" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="FEMM Simulations" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Scripting" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Scripting/swIron_Time.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -167,22 +177,23 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.plotData" />
-      <item itemvalue="Python.spice" />
+      <item itemvalue="Python.injectorRL_time" />
+      <item itemvalue="Python.readDataToFile" />
+      <item itemvalue="Python.scratch_2" />
       <item itemvalue="Python.swInductance" />
-      <item itemvalue="Python.swIron_Time" />
       <item itemvalue="Python.swRL_time" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.injectorRL_time" />
         <item itemvalue="Python.swRL_time" />
+        <item itemvalue="Python.scratch_2" />
+        <item itemvalue="Python.readDataToFile" />
         <item itemvalue="Python.swInductance" />
-        <item itemvalue="Python.swIron_Time" />
-        <item itemvalue="Python.spice" />
-        <item itemvalue="Python.plotData" />
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -214,9 +225,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -235,6 +244,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Started writing the simulation writeup report" />
@@ -244,9 +254,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/Scripting/swRL_time.py</url>
-          <line>112</line>
-          <option name="timeStamp" value="1" />
+          <url>file://$PROJECT_DIR$/Scripting/injectorRL_time.py</url>
+          <line>114</line>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -255,10 +265,5 @@
         <watch expression="time" />
       </configuration>
     </watches-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/FEMM_Simulations$swDimensions.coverage" NAME="swDimensions Coverage Results" MODIFIED="1572812672721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/FEMM_Simulations$plotData.coverage" NAME="plotData Coverage Results" MODIFIED="1572828709775" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/FEMM_Simulations$swInductance.coverage" NAME="swInductance Coverage Results" MODIFIED="1571792332569" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

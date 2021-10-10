@@ -28,14 +28,14 @@ circuitResistance = 0.15  # [ohm]
 # projectile params
 pos_start = -0.5  # [cm]
 pos_end = 6
-v_start = 0  # starting velocity in [m/s]
+v_start = 32.0318  # starting velocity in [m/s]
 # time [s]
 time_start = 0
 time_stop = 5e-2
 time_step = 5e-5
 # coil inductance [uH] , changes R_outer
-ind_start = 250
-ind_stop = 400
+ind_start = 65
+ind_stop = 65
 ind_step = 50
 # coil resistance [ohm] , changes R_outer
 res_start = 0.01
@@ -147,8 +147,8 @@ def initializeSheet(workbook, name):
     worksheet = workbook.add_worksheet(name=name)
     worksheet.write(0, 0, 'Time [s]')
     worksheet.write(0, 1, 'Stage #')
-    worksheet.write(0, 2, 'Position wrt. Stage [cm]')
-    worksheet.write(0, 3, 'Position [cm]')
+    worksheet.write(0, 2, 'Position wrt. Stage [m]')
+    worksheet.write(0, 3, 'Position [m]')
     worksheet.write(0, 4, 'Velocity [m/s]')
     worksheet.write(0, 5, 'Acceleration [m/s^2]')
     worksheet.write(0, 6, 'Force [N]')

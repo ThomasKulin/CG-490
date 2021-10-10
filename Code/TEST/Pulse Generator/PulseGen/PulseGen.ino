@@ -7,15 +7,16 @@ int numIterations = 0;
 int iter = 0;
 void setup() {
   pinMode(pulsePin, OUTPUT);
-  pinMode(2, OUTPUT);
+  pinMode(13, OUTPUT);
 }
 
 void loop() {
-  digitalWrite(2, LOW);
   if (numIterations==0 || numIterations > iter) {
     digitalWrite(pulsePin, HIGH);
+    digitalWrite(13, HIGH);
     delay(onTime);
     digitalWrite(pulsePin, LOW);
+    digitalWrite(13, LOW);
     delay(offTime);
     iter++;
   }
